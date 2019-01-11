@@ -13,6 +13,6 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-public_tweets = api.home_timeline()
-for tweet in public_tweets:
-    print(tweet.text)
+poli_tweets = api.user_timeline(357606935, count=3000, tweet_mode="extended")
+for tweet in poli_tweets:
+    print(tweet.created_at, tweet.full_text)

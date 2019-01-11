@@ -12,7 +12,7 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-user_id=357606935
+user_id=33537967
 
 #Find ID of most recent Tweet:
 first_tweet=api.user_timeline(user_id,count=1)
@@ -25,7 +25,7 @@ file_name = str(user_id)+"_tweets.csv"
 with open(file_name, 'w', newline='') as csvfile:
 	csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
 	#Iterate through all Tweets:
-	for i in range(29):
+	for i in range(50):
 		poli_tweets = api.user_timeline(user_id, max_id=(max_id-1), count=100, tweet_mode="extended")
 		for tweet in poli_tweets:
 			csvwriter.writerow([tweet.id]+[tweet.created_at]+[tweet.full_text]+[tweet.place]+[tweet.retweet_count]+[tweet.favorite_count])

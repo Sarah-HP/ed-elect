@@ -1,3 +1,8 @@
+html {
+  font-size: 18px; /* px means 'pixels': the base font size is now 10 pixels high  */
+  font-family: 'Open Sans', sans-serif; /* this should be the rest of the output you got from Google fonts */
+}
+
 p {
 	color: black;
 	width: 500px;
@@ -11,15 +16,16 @@ h1 {
 }
 
 html {
-	background-color: #ada397
+	background-color: #ACCBE0
 }
 
+
 body {
-  width: 600px;
-  margin: 0 auto;
-  background-color: #FF9500;
-  padding: 20 20px 20px 20px;
-  border: 5px solid black;
+  width: 1200px;
+  margin: 100 auto;
+  background-color: #D3E0EA;
+  padding: 50 50px 50px 50px;
+  border: 3px solid black;
 }
 
 .quote {

@@ -13,11 +13,27 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-poli_tweets = api.user_timeline(357606935, count=3000, tweet_mode="extended")
+user_id=357606935
 
-for tweet in poli_tweets:
-	print(tweet.id_str + ", " + str(tweet.created_at) + ", " + tweet.full_text + ", " + str(tweet.place) + ", " + str(tweet.retweet_count) + ", " + str(tweet.favorite_count))
+#Find ID of most recent Tweet:
+first_tweet=api.user_timeline(user_id,count=1)
 
+min_id=first_tweet[0].id+1
+
+for i in range(29):
+	poli_tweets = api.user_timeline(user_id, max_id=(min_id-1), count=100, tweet_mode="extended")
+	for tweet in poli_tweets:
+		print(tweet.id)
+	min_id=poli_tweets[-1].id
+
+
+#for tweet in poli_tweets:
+#	print(str(tweet.id) + ", " + str(tweet.created_at) + ", " + tweet.full_text + ", " + str(tweet.place) + ", " + str(tweet.retweet_count) + ", " + str(tweet.favorite_count))
+
+#print("THIS IS THE GAP BETWEEN THEM")
+
+#for tweet in poli_tweets2:
+#	print(tweet.id_str + ", " + str(tweet.created_at) + ", " + tweet.full_text + ", " + str(tweet.place) + ", " + str(tweet.retweet_count) + ", " + str(tweet.favorite_count))
 
 
 #check to see if education comes up much

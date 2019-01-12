@@ -1,16 +1,16 @@
-"Booker" Booker_office" 15808765
-"Booker" "Booker_staff" 2167097881
-"Booker" "Booker_campaign" 1603426344
-"Brown" "Brown_office" 43910797
-"Brown" "Brown_campaign" 24768753
-"Gillibrand" "Gillibrand_office" 72198806
-"Gillibrand" "Gillibrand_campaign" 709389393811927041
-"Harris" "Harris_office" 803694179079458816
-"Harris" "Harris_campaign" 30354991 
-"Klobuchar" "Klobuchar_office" 33537967
-"Merkley" "Merkley_office" 29201047
-"Merkley" "Merkley_campaign" 223166587
-"Sanders" "Sanders_office" 946946130
-"Sanders" "Sanders_staff" 216776631
-"Warren" "Warren_campaign" 357606935
-"Warren" "Warren_office" 970207298
+./t_scraper.py "Booker" "Booker_office" 15808765
+./t_scraper.py "Booker" "Booker_staff" 2167097881
+./t_scraper.py "Booker" "Booker_campaign" 1603426344
+./t_scraper.py "Brown" "Brown_office" 43910797
+./t_scraper.py "Brown" "Brown_campaign" 24768753
+./t_scraper.py "Gillibrand" "Gillibrand_office" 72198806
+./t_scraper.py "Gillibrand" "Gillibrand_campaign" 709389393811927041
+./t_scraper.py "Harris" "Harris_office" 803694179079458816
+./t_scraper.py "Harris" "Harris_campaign" 30354991 
+./t_scraper.py "Klobuchar" "Klobuchar_office" 33537967
+./t_scraper.py "Merkley" "Merkley_office" 29201047
+./t_scraper.py "Merkley" "Merkley_campaign" 223166587
+./t_scraper.py "Sanders" "Sanders_office" 29442313
+./t_scraper.py "Sanders" "Sanders_staff" 216776631
+./t_scraper.py "Warren" "Warren_campaign" 357606935
+./t_scraper.py "Warren" "Warren_office" 970207298

@@ -1,0 +1,100 @@
+  1. Candidate
+	<class 'str'>
+	Nulls: False
+	Unique values: 25
+	5 most frequent values:
+		Booker:	7480
+		Delaney:	6488
+		Gabbard:	6466
+		Clinton:	6460
+		ORourke:	6440
+	Max length: 12
+  2.  Candidate Account
+	<class 'str'>
+	Nulls: False
+	Unique values: 44
+	5 most frequent values:
+		Delaney_campaign:	3246
+		Buttigieg_campaign:	3242
+		Delaney_office:	3242
+		Booker_staff:	3239
+		Swalwell_office:	3239
+	Max length: 21
+  3.  Tweet ID
+	<class 'int'>
+	Nulls: False
+	Min: 361388562
+	Max: 1084108454267158533
+	Sum: 103042481452744135597055
+	Mean: 8.679381192269618e+17
+	Median: 926243027034587136
+	Standard Deviation: 2.0419964867265846e+17
+	Unique values: 118721
+  4.  Date
+	<class 'datetime.datetime'>
+	Nulls: False
+	Min: 2007-10-24 22:45:57
+	Max: 2019-01-12 15:22:51
+	Unique values: 117499
+	5 most frequent values:
+		2017-07-06 22:57:36:	16
+		2018-12-21 18:05:17:	6
+		2018-12-21 18:05:18:	5
+		2019-01-08 23:54:50:	5
+		2017-09-13 19:12:57:	5
+  5.  Tweet Text
+	<class 'str'>
+	Nulls: False
+	Unique values: 117605
+	5 most frequent values:
+		Planning a visit to DC? We can help you and your ohana schedule tours of the US Capitol, Library of Congress &amp; more: https://t.co/ulyKEOyBSJ:	16
+		Let's stay in touch, click here to subscribe to my e-newsletter https://t.co/EhJtbIzO3M:	10
+		We need a healthcare system that puts people first, ahead of the profits of insurance and pharmaceutical companies https://t.co/Pbt1q3GCiD:	10
+		There are many kinds of natural disaster that can impact our islands. Because of their level of devastation or frequency of occurrence, our top three hazards are hurricanes, tsunamis, and flashfloods. That’s why it’s important to always be prepared: https://t.co/k0w4IpQkQ1:	9
+		Tell me about your bridge experience. How long you waited. How you were treated. I want to know the good, the bad and the ugly. #epbridges:	8
+	Max length: 708
+  6.  Tweet Place
+	<class 'str'>
+	Nulls: True
+	Unique values: 356
+	5 most frequent values:
+		Place(name='New Orleans', bounding_box=BoundingBox(coordinates=[[[-90.137908, 29.889574], [-89.884108, 29.889574], [-89.884108, 30.075628], [-90.137908, 30.075628]]], type='Polygon', _api=<tweepy.api.API object at 0x7fabbfbed940>), full_name='New Orleans, LA', attributes={}, place_type='city', url='https://api.twitter.com/1.1/geo/id/dd3b100831dd1763.json', contained_within=[], country_code='US', id='dd3b100831dd1763', country='United States', _api=<tweepy.api.API object at 0x7fabbfbed940>):	481
+		Place(bounding_box=BoundingBox(type='Polygon', coordinates=[[[-86.385306, 41.598756], [-86.19642, 41.598756], [-86.19642, 41.760555], [-86.385306, 41.760555]]], _api=<tweepy.api.API object at 0x7f28d093e908>), full_name='South Bend, IN', id='20a70247c3cbdd23', country='United States', url='https://api.twitter.com/1.1/geo/id/20a70247c3cbdd23.json', name='South Bend', attributes={}, place_type='city', _api=<tweepy.api.API object at 0x7f28d093e908>, country_code='US', contained_within=[]):	479
+		Place(url='https://api.twitter.com/1.1/geo/id/6a0a3474d8c5113c.json', id='6a0a3474d8c5113c', name='El Paso', country_code='US', place_type='city', country='United States', contained_within=[], attributes={}, _api=<tweepy.api.API object at 0x7ff43db1f940>, full_name='El Paso, TX', bounding_box=BoundingBox(coordinates=[[[-106.634874, 31.6206683], [-106.199987, 31.6206683], [-106.199987, 31.966068], [-106.634874, 31.966068]]], _api=<tweepy.api.API object at 0x7ff43db1f940>, type='Polygon')):	40
+		Place(name='Pleasanton', url='https://api.twitter.com/1.1/geo/id/ad4876a662119b74.json', id='ad4876a662119b74', contained_within=[], place_type='city', country_code='US', bounding_box=BoundingBox(coordinates=[[[-121.956864, 37.621859], [-121.7986057, 37.621859], [-121.7986057, 37.704036], [-121.956864, 37.704036]]], type='Polygon', _api=<tweepy.api.API object at 0x7f11b19fd908>), _api=<tweepy.api.API object at 0x7f11b19fd908>, full_name='Pleasanton, CA', attributes={}, country='United States'):	27
+		Place(url='https://api.twitter.com/1.1/geo/id/3df4f427b5a60fea.json', id='3df4f427b5a60fea', name='San Antonio', country_code='US', place_type='city', country='United States', contained_within=[], attributes={}, _api=<tweepy.api.API object at 0x7ff43db1f940>, full_name='San Antonio, TX', bounding_box=BoundingBox(coordinates=[[[-98.778559, 29.141956], [-98.302744, 29.141956], [-98.302744, 29.693046], [-98.778559, 29.693046]]], _api=<tweepy.api.API object at 0x7ff43db1f940>, type='Polygon')):	15
+	Max length: 649
+  7.  Tweet Retweet Count
+	<class 'int'>
+	Nulls: False
+	Min: 0
+	Max: 1663546
+	Sum: 134741463
+	Mean: 1134.942116390529
+	Median: 44
+	Standard Deviation: 9880.821735919635
+	Unique values: 8717
+	5 most frequent values:
+		0:	10015
+		1:	5243
+		2:	4099
+		3:	3441
+		4:	2943
+  8.  Tweet Favorite Count
+	<class 'int'>
+	Nulls: False
+	Min: 0
+	Max: 1319969
+	Sum: 259361501
+	Mean: 2184.6303602563994
+	Median: 44
+	Standard Deviation: 12011.726000508035
+	Unique values: 13043
+	5 most frequent values:
+		0:	30113
+		1:	4401
+		2:	2565
+		3:	1912
+		4:	1532
+
+Row count: 118721

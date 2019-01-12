@@ -39,7 +39,7 @@ with open(file_name, 'w', newline='') as csvfile:
 	poli_tweets=[1,2]
 	while len(poli_tweets) > 0:
 		poli_tweets = api.user_timeline(user_id, max_id=(max_id-1), count=100, tweet_mode="extended")
-#		print(len(poli_tweets))
+		print(len(poli_tweets))
 		for tweet in poli_tweets:
 			csvwriter.writerow([tweet.id]+[tweet.created_at]+[tweet.full_text]+[tweet.place]+[tweet.retweet_count]+[tweet.favorite_count])
 			max_id=tweet.id

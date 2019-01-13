@@ -6,8 +6,9 @@
 # Put quotation marks around the search term
 # Example input:
 # ./term_scraper.py "#potentialgrizzlies"
+# You can use AND or OR to get results for multiple terms
 
-#Results print to term_search_results folder
+# Results print to term_search_results folder
 
 import tweepy
 import csv

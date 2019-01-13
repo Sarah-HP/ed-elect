@@ -38,7 +38,7 @@ file_name=file_name.replace(" ","_")
 
 with open(file_name, 'w', newline='') as csvfile:
 	csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-	csvwriter.writerow(["Username", "Location", "Verified User?", "Tweet ID", "Tweet Time", "Tweet Text", "Tweet Place", "Retweet Count", "Favorite Count"])
+	csvwriter.writerow(["Search Term", "Username", "Location", "Verified User?", "Tweet ID", "Tweet Time", "Tweet Text", "Tweet Place", "Retweet Count", "Favorite Count"])
 	poli_tweets = tweepy.Cursor(api.search,q=search_for, count = 100, tweet_mode="extended", since=start_date, wait_on_rate_limit=True, wait_on_rate_limit_notify=True).items()
 	for tweet in poli_tweets:
-		csvwriter.writerow([tweet.user.name]+[tweet.user.location]+[tweet.user.verified]+[tweet.id]+[tweet.created_at]+[tweet.full_text]+[tweet.place]+[tweet.retweet_count]+[tweet.favorite_count])
+		csvwriter.writerow([search_for]+[tweet.user.name]+[tweet.user.location]+[tweet.user.verified]+[tweet.id]+[tweet.created_at]+[tweet.full_text]+[tweet.place]+[tweet.retweet_count]+[tweet.favorite_count])

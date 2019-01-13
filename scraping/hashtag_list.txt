@@ -34,7 +34,6 @@
 ./term_scraper.py "school finance"
 ./term_scraper.py "#schoolfinance"
 ./term_scraper.py "#TITLEIX"
-./term_scraper.py "#potentialgrizzl"
 ./term_scraper.py "#opportunitygap"
 ./term_scraper.py "#educationalequity"
 ./term_scraper.py "#educhat"
@@ -45,7 +44,10 @@
 ./term_scraper.py "#devos"
 ./term_scraper.py "@betsydevos"
 ./term_scraper.py "@betsydevosed"
-
+./term_scraper.py "for-profit AND college"
+./term_scraper.py "#schoolfinance"
+./term_scraper.py "#letteachersteach"
+./term_scraper.py "#publicschools"
 
 
 

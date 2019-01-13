@@ -1,7 +1,27 @@
 #!/usr/bin/env python3
 
+
+# Run this search directly from the command line. Input format:
+# ./term_scraper.py "[search term]" "[start data--format: YYYY-MM-DD]"
+# Put quotation marks around both those inputs
+# Example input:
+# ./term_scraper.py "#potentialgrizzlies" "2019-01-01"
+
+#Results print to term_search_results folder
+
+
+
 import tweepy
 import csv
+import argparse
+
+parser=argparse.ArgumentParser(description="scrape Twitter for terms")
+parser.add_argument("search_term")
+parser.add_argument("start_date")
+args=parser.parse_args()
+
+search_for=args.search_term
+start_date=args.start_date
 
 consumer_key="jJevgPoZqCvvlaEaDfCjSo3T4"
 consumer_secret="s5uGQVieitvw5CT5FVBj7yM08aP84zf8HNpm4Ya99RtxsTnBA2"
@@ -15,13 +35,13 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 #Change this to be name of output file
-file_name="testing.csv"
+file_name= "term_search_results/results_for_" + search_for + ".csv"
 
 #Change this to be desired search term
-search_for="#schoolchoice"
+#search_for="#potentialgrizzlies"
 
 #Change this to be desired start date
-start_date = "2019-01-01"
+#start_date = "2019-01-01"
 
 with open(file_name, 'w', newline='') as csvfile:
 	csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)

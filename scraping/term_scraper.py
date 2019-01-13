@@ -33,12 +33,12 @@ api = tweepy.API(auth)
 
 start_date = "2016-01-01"
 file_name = "term_search_results/results_for_" + search_for + ".csv"
+file_name=file_name.replace(" ","_")
+
 
 with open(file_name, 'w', newline='') as csvfile:
 	csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-	#Iterate through all Tweets:
-#	poli_tweets=[1,2]
-#	while len(poli_tweets) > 0:
+	csvwriter.writerow(["Username", "Location", "Verified User?", "Tweet ID", "Tweet Time", "Tweet Text", "Tweet Place", "Retweet Count", "Favorite Count"])
 	poli_tweets = tweepy.Cursor(api.search,q=search_for, count = 100, tweet_mode="extended", since=start_date, wait_on_rate_limit=True, wait_on_rate_limit_notify=True).items()
 	for tweet in poli_tweets:
 		csvwriter.writerow([tweet.user.name]+[tweet.user.location]+[tweet.user.verified]+[tweet.id]+[tweet.created_at]+[tweet.full_text]+[tweet.place]+[tweet.retweet_count]+[tweet.favorite_count])

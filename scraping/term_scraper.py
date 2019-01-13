@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+
+import tweepy
+import csv
+
+consumer_key="jJevgPoZqCvvlaEaDfCjSo3T4"
+consumer_secret="s5uGQVieitvw5CT5FVBj7yM08aP84zf8HNpm4Ya99RtxsTnBA2"
+
+access_token="1083483578359599104-iesJJeVOjPKmTB4peDWVIWzIJCl0rU"
+access_token_secret="QREgbBttdMhWRCE7xBtXAIzNN0tG65QsvIstMxmgjcrt3"
+
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+
+api = tweepy.API(auth)
+
+#Change this to be name of output file
+file_name="testing.csv"
+
+#Change this to be desired search term
+search_for="#schoolchoice"
+
+#Change this to be desired start date
+start_date = "2019-01-01"
+
+with open(file_name, 'w', newline='') as csvfile:
+	csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+	#Iterate through all Tweets:
+#	poli_tweets=[1,2]
+#	while len(poli_tweets) > 0:
+	poli_tweets = tweepy.Cursor(api.search,q=search_for, count = 100, tweet_mode="extended", since=start_date).items()
+	for tweet in poli_tweets:
+		csvwriter.writerow([tweet.user.name]+[tweet.user.location]+[tweet.user.verified]+[tweet.id]+[tweet.created_at]+[tweet.full_text]+[tweet.place]+[tweet.retweet_count]+[tweet.favorite_count])

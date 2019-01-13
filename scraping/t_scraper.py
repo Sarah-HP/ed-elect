@@ -25,8 +25,6 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-#user_id=33537967
-
 #Find ID of most recent Tweet:
 first_tweet=api.user_timeline(user_id,count=1)
 

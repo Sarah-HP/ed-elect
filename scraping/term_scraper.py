@@ -34,14 +34,7 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-#Change this to be name of output file
 file_name= "term_search_results/results_for_" + search_for + ".csv"
-
-#Change this to be desired search term
-#search_for="#potentialgrizzlies"
-
-#Change this to be desired start date
-#start_date = "2019-01-01"
 
 with open(file_name, 'w', newline='') as csvfile:
 	csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)

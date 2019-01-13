@@ -1,4 +1,4 @@
-./term_scraper.py "gun and school"
+./term_scraper.py "gun AND school"
 ./term_scraper.py "#CCChat"
 ./term_scraper.py "#charterschool"
 ./term_scraper.py "#EdPolicy"

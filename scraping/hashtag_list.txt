@@ -15,7 +15,6 @@
 ./term_scraper.py "#edgap"
 ./term_scraper.py "#literacy"
 ./term_scraper.py "#blackedu"
-./term_scraper.py "Elatinoedu"
 ./term_scraper.py "#nativeedu"
 ./term_scraper.py "#teacherquality"
 ./term_scraper.py "#eddata"
@@ -32,3 +31,22 @@
 ./term_scraper.py "#collegeaffordability"
 ./term_scraper.py "#edpoli"
 ./term_scraper.py "devos"
+./term_scraper.py "school finance"
+./term_scraper.py "#schoolfinance"
+./term_scraper.py "#TITLEIX"
+./term_scraper.py "#potentialgrizzl"
+./term_scraper.py "#opportunitygap"
+./term_scraper.py "#educationalequity"
+./term_scraper.py "#educhat"
+./term_scraper.py "#highered"
+./term_scraper.py "#K12"
+./term_scraper.py "#latinoedu"
+./term_scraper.py "#edpolitics"
+./term_scraper.py "#devos"
+./term_scraper.py "@betsydevos"
+./term_scraper.py "@betsydevosed"
+
+
+
+
+Many taken from https://www.gettingsmart.com/2017/07/education-hashtags-teachers-edleaders/

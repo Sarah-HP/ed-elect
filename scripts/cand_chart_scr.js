@@ -29,7 +29,7 @@ var tip = d3.tip()
 var svg = d3.select("div.candidate-charts").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-    .attr("id", "cand_2020")
+    .attr("class", "cand_2020")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 

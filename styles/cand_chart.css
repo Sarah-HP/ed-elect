@@ -1,31 +1,35 @@
-#cand_2020 body {
+.cand_2020 body {
   font: 10px sans-serif;
 }
 
-#cand_2020 .axis path,
+.cand_2020 .axis path,
 .axis line {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
 }
 
-#cand_2020 svg {
+.cand_2020 svg {
   padding: 100px;
 }
 
-#cand_2020 .bar {
+.cand_2020 svg2 {
+  padding: 100px;
+}
+
+.cand_2020 .bar {
   fill: #6677FF;
 }
 
-#cand_2020 .bar:hover {
+.cand_2020 .bar:hover {
   fill: blue ;
 }
 
-#cand_2020 .x.axis path {
+.cand_2020 .x.axis path {
   display: none;
 }
 
-#cand_2020 .d3-tip {
+.cand_2020 .d3-tip {
   line-height: 1;
   font-weight: bold;
   padding: 12px;
@@ -35,7 +39,7 @@
 }
 
 /* Creates a small triangle extender for the tooltip */
-#cand_2020 .d3-tip:after {
+.cand_2020 .d3-tip:after {
   box-sizing: border-box;
   display: inline;
   font-size: 10px;
@@ -48,7 +52,7 @@
 }
 
 /* Style northward tooltips differently */
-#cand_2020 .d3-tip.n:after {
+.cand_2020 .d3-tip.n:after {
   margin: -1px 0 0 0;
   top: 100%;
   left: 0;

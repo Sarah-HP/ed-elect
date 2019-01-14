@@ -26,7 +26,7 @@ var tip = d3.tip()
     return "<strong>Exact Proportion:</strong> <span style='color:black'>" + d.ed_perc + "</span>";
   })
 
-var svg = d3.select("div.candidate-charts").append("svg")
+var svg = d3.select("div#chart_unsorted").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .attr("class", "cand_2020")

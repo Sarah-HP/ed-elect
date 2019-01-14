@@ -3,6 +3,7 @@
 <head>
 	<title>Democratic Candidates for the 2020 Election: Thoughts on Education</title>
 	<link href="styles/a3style.css" rel="stylesheet" type="text/css">
+	<link href="styles/cand_chart.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 		<h1>EdElect</h1>
@@ -26,7 +27,7 @@
 
 	<p> To answer this question, we downloaded recent Tweets by the leading Democratic 2020 hopefuls and analyzed how frequently they mentioned terms related to education. The results are below, followed by a more technical description of the methodology.</p>
 
-	<p><img src="Images/Candidate_Tweet_Perc.jpeg"></p>
+	<div class="candidate-charts"></div>
 
 	<p> The results may be easier to interpret when organized from highest frequency of education Tweets to lowest: </p>
 
@@ -37,6 +38,11 @@
 
 	<p> We collected these data using the Python package Tweepy, which makes it possible to download recent Tweets by Twitter accounts. Generally, roughly the last three to four thousand Tweets are available by this method. Some candidates have multiple accounts, meaning that the number of Tweets collected for each candidated varied between roughly 1,500 (Biden) and nearly 7,500 (Booker). We then calculated what percentage of those Tweets included terms related to education (e.g. student, teacher, education, etc.). </p>
 
+
+
+	<<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+	<script src="scripts/cand_chart_scr.js"></script>
 
 </body>
 </html>

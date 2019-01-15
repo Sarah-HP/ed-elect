@@ -22,12 +22,24 @@ text = []
 for tweet in tweets:
 	text.append(tweet['Tweet.Text'])
 
+#Strip punctuation--set-up adapted from https://www.programiz.com/python-programming/examples/remove-punctuation
+#Leaving in # and @ because they mean stuff on Twitter
+text_no_punc = []
+punctuations = '''!()-[]{};:'"\,<>./?$%^&*_~'''
+for tweet in text:
+	no_punc = ''
+	for char in tweet:
+		if char not in punctuations:
+			no_punc = no_punc + char
+	text_no_punc.append(no_punc)
+
+
 #list of words I don't want to count
 useless = set(stopwords.words('english'))
 
 #make a list of just the words
 words = []
-for i in text:
+for i in text_no_punc:
 	#make all lowercase
 	lower_i = i.lower()
 	#split each tweet into list of words
@@ -45,4 +57,8 @@ for word in words:
 	else:
 		word_count[word] = 1
 
-print(len(word_count))
+with open('common_words.csv','w') as f:
+	writer = csv.writer(f)
+	writer.writerow(['Word','Frequency'])
+	for i, j in word_count.items():
+		writer.writerow([i, j])

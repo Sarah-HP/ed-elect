@@ -1,7 +1,13 @@
 import csv
 
+#First time through needed to install stuff
+#import nltk
+#nltk.download('stopwords')
+
+from nltk.corpus import stopwords
+
 #read in list of all candidate tweets
-with open('aggregated.csv', 'r') as f:
+with open('tweets_with_terms.csv', 'r') as f:
 	reader=csv.DictReader(f)
 	rows = list(reader)
 
@@ -14,7 +20,10 @@ for row in rows:
 #make a list with just the tweets' text
 text = []
 for tweet in tweets:
-	text.append(tweet[' Tweet Text'])
+	text.append(tweet['Tweet.Text'])
+
+#list of words I don't want to count
+useless = set(stopwords.words('english'))
 
 #make a list of just the words
 words = []
@@ -25,7 +34,8 @@ for i in text:
 	lower_i_split = lower_i.split()
 	#loop through word lists
 	for j in lower_i_split:
-		words.append(j)
+		if j not in useless:
+			words.append(j)
 
 #make dictionary of word counts
 word_count = {}
@@ -34,3 +44,5 @@ for word in words:
 		word_count[word] += 1
 	else:
 		word_count[word] = 1
+
+print(len(word_count))

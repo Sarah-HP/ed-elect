@@ -64,16 +64,46 @@ for tweet in edu_tweets:
 										if 'loan' in tweet[' Tweet Text'].lower() and ('education' in tweet[' Tweet Text'].lower() or 'college' in tweet[' Tweet Text'].lower() or 'higher education' in tweet[' Tweet Text'].lower()):
 											college_aff_tweets.append(tweet)
 
+#Write affordability tweets to CSV
 with open('college_aff_tweets.csv','w') as f:
 	d_wr = csv.DictWriter(f, attrib)
 	d_wr.writeheader()
 	d_wr.writerows(college_aff_tweets)
 
+#Count tweets about affordability by candidate
 cand_coll_aff_count = {}
-
 for tweet in college_aff_tweets:
 	cand = tweet['Candidate']
 	if cand in cand_coll_aff_count:
 		cand_coll_aff_count[cand] += 1
 	else:
 		cand_coll_aff_count[cand] = 1
+
+#Count tweets about education by candidate
+cand_edu_tweet_count = {}
+for tweet in edu_tweets:
+	cand = tweet['Candidate']
+	if cand in cand_edu_tweet_count:
+		cand_edu_tweet_count[cand] += 1
+	else:
+		cand_edu_tweet_count[cand] = 1
+
+#Create list of lists with list for each candidate with # of aff tweets, # of edu tweets, and # of total tweets
+#First make list of candidates - there are more efficient ways of doing this, but just in case there's one with no tweets about edu or something I'll use the complete list of aggregated tweets:
+cand_list=[]
+for tweet in tweets:
+	cand = tweet['Candidate']
+	if cand not in cand_list:
+		cand_list.append(cand)
+#now make list of lists:
+cand_summary = []
+#avoid any key errors in case a candidate has no entries in either the edu tweet count or aff tweet count (looking at you, Ojeda):
+for i in cand_list:
+	if i not in cand_edu_tweet_count:
+		cand_edu_tweet_count[i] = 0
+	if i not in cand_coll_aff_count:
+		cand_coll_aff_count[i] = 0
+
+for i in cand_list:
+	cand_summary.append([i, cand_edu_tweet_count[i], cand_coll_aff_count[i]])
+print(cand_summary)

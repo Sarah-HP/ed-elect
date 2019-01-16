@@ -12,7 +12,7 @@ with open('tweets_with_terms.csv', 'r') as f:
 	reader=csv.DictReader(f)
 	rows = list(reader)
 
-#read in the tweets as a dictionary
+#read in the tweets as a list of dictionaries
 tweets=[]
 for row in rows:
 	item=dict(row)

@@ -6,8 +6,9 @@ Methodology behind school affordability Twitter data:
 
 -Manually deleted Tweets from Colorado governor Twitter account (labeled in aggregated file as Hickenlooper_office) that were posted after new governor took office and took over Twitter (did this on Jan 16, ~3 PM--see commit in sam-aff branch)
 
+-For our MVP I analyzed the Tweets in R; in the spirit of experimentation and learning, for the second sprint I'm redoing the analysis in python
 
+To filter for education-related Tweets, I ran the aggregated set of candidate Tweets through tweet_filter.py, which picks out Tweets containing education-related terms (see the script for the term list), then looks for words in those tweets related to college affordability in order to count the number of tweets by candidates about that issue.
 
-
-
+That filter outputs a csv with the # of educational tweets by the candidate and the number of college affordability tweets.
 

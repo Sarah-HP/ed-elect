@@ -20,18 +20,25 @@ for tweet in tweets:
             no_punc_loc = no_punc_loc + char
     tweet['Location'] = no_punc_loc
 
-state_list = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming','District of Columbia','Puerto Rico','Guam','American Samoa','U.S. Virgin Islands','Northern Mariana Islands']
+
+#create lists of states including spelled out and abbreviated to filter for
+#Upper case abbreviations OK without spaces b/c most likely states
+#lower case abbreviations require spaces on either side so as not to catch the middles of words 
+state_list = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming','District of Columbia','Puerto Rico']
 lc_state_list = []
 for state in state_list:
     lc_state_list.append(state.lower())
-state_abbrev_list = ['AK', 'AL', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI']
-lc_state_abbrev_list_generator = [' AK ', ' AL ', ' AZ ', ' AR ', ' CA ', ' CO ', ' CT ', ' DE ', ' FL ', ' GA ', ' HI ', ' ID ', ' IL ', ' IN ', ' IA ', ' KS ', ' KY ', ' LA ', ' ME ', ' MD ', ' MA ', ' MI ', ' MN ', ' MS ', ' MO ', ' MT ', ' NE ', ' NV ', ' NH ', ' NJ ', ' NM ', ' NY ', ' NC ', ' ND ', ' OH ', ' OK ', ' OR ', ' PA ', ' RI ', ' SC ', ' SD ', ' TN ', ' TX ', ' UT ', ' VT ', ' VA ', ' WA ', ' WV ', ' WI ']
+state_abbrev_list = ['AK', 'AL', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI']
+lc_state_abbrev_list_generator = [' AK ', ' AL ', ' AZ ', ' AR ', ' CA ', ' CO ', ' CT ', ' DE ', ' FL ', ' GA ', ' HI ', ' ID ', ' IL ', ' IN ', ' IA ', ' KS ', ' KY ', ' LA ', ' ME ', ' MD ', ' MA ', ' MI ', ' MN ', ' MS ', ' MO ', ' MT ', ' NE ', ' NV ', ' NH ', ' NJ ', ' NM ', ' NY ', ' NC ', ' ND ', ' OH ', ' OK ', ' OR ', ' PA ', 'PR ', ' RI ', ' SC ', ' SD ', ' TN ', ' TX ', ' UT ', ' VT ', ' VA ', ' WA ', ' WV ', ' WI ']
 lc_state_abbrev_list = []
 for state in lc_state_abbrev_list_generator:
     lc_state_abbrev_list.append(state.lower())
 
+#combine all lists into one list
 all_state_info = state_list + lc_state_list + state_abbrev_list + lc_state_abbrev_list
 
+
+#loop through tweets, see if include state label or name
 located_tweets = []
 for dict in tweets:
     #deal with DC first b/c it and Washington state will cause problems otherwise
@@ -45,10 +52,12 @@ for dict in tweets:
                 located_tweets.append(dict)
                 break
 
+#convert dictionaries to lists to write to csv
 l_tweets_list = []
 for i in located_tweets:
     l_tweets_list.append([i['Search Term'], i['Username'], i['Location'],i['State'], i['Verified User?'], i['Tweet ID'], i['Tweet Time'], i['Tweet Text'], i['Tweet Place'], i['Retweet Count'], i['Favorite Count']])
 
+#write to csv
 with open('located_tweets.csv','w') as f:
     writer = csv.writer(f)
     writer.writerow(['Search Term', 'Username', 'Location','State', 'Verified User?', 'Tweet ID', 'Tweet Time', 'Tweet Text', 'Tweet Place', 'Retweet Count', 'Favorite Count'])

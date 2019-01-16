@@ -42,17 +42,27 @@ all_state_info = state_list + lc_state_list + state_abbrev_list + lc_state_abbre
 located_tweets = []
 for dict in tweets:
     #deal with DC first b/c it and Washington state will cause problems otherwise
-    if ('DC' in dict['Location'] or ' dc ' in dict['Location'] or 'Washington, DC' in dict['Location'] or 'washington dc' in dict['Location'] or 'Washington, dc' in dict['Location'] or 'Washington DC' in dict['Location']):
+    if ('DC' in dict['Location'] or ' dc ' in dict['Location'] or 'Washington, DC' in dict['Location'] or 'washington dc' in dict['Location'] or 'Washington, dc' in dict['Location'] or 'Washington DC' in dict['Location'] or 'District of Columbia' in dict['Location']):
         dict['State'] = 'DC'
         located_tweets.append(dict)
     else:
         for state in all_state_info:
             if state in dict['Location']:
-                dict['State'] = state
+                dict['State'] = state #will need to standardize state format (this will match whatever format Twitter account used)
                 located_tweets.append(dict)
                 break
 
-#convert dictionaries to lists to write to csv
+#Make dictionary of all state abbrevations to standardize state format. Adapted from https://gist.github.com/rogerallen/1583593
+
+state_dictionary = {'AL': ['Alabama', 'alabama', 'AL', ' al '], 'AK': ['Alaska', 'alaska', 'AK', ' ak '], 'AZ': ['Arizona', 'arizona', 'AZ', ' az '], 'AR': ['Arkansas', 'arkansas', 'AR', ' ar '], 'CA': ['California', 'california', 'CA', ' ca '], 'CO': ['Colorado', 'colorado', 'CO', ' co '], 'CT': ['Connecticut', 'connecticut', 'CT' ' ct '], 'DE': ['Delaware', 'delaware', 'DE', ' de '], 'FL': ['Florida', 'florida', 'FL' ' fl '], 'GA': ['Georgia', 'georgia', 'GA', ' ga '], 'HI': ['Hawaii', 'hawaii', 'HI', 'hi'], 'ID': ['Idaho', 'idaho', 'ID', ' id '], 'IL': ['Illinois', 'illinois', 'IL', ' il '], 'IN': ['Indiana', 'indiana', 'IN', ' in '], 'IA': ['Iowa', 'iowa', 'IA', ' ia '], 'KS': ['Kansas', 'kansas', 'KS', ' ks '], 'KY': ['Kentucky', 'kentucky', 'KY', ' ky '], 'LA': ['Louisiana', 'louisiana', 'LA', ' la '], 'MA': ['Massachusetts', 'massachusetts', 'MA', ' ma '], 'ME': ['Maine', 'maine', 'ME', ' me '], 'MD': ['Maryland', 'maryland', 'MD', ' md '], 'MI': ['Michigan', 'michigan', 'MI', ' mi '], 'MN': ['Minnesota', 'minnesota', 'MN', ' mn '], 'MS': ['Mississippi', 'mississippi', 'MS', ' ms '], 'MO': ['Missouri', 'missouri', 'MO', ' mo '], 'MT': ['Montana', 'montana', 'MT', ' mt '], 'NE': ['Nebraska', 'nebraska', 'NE', ' ne '], 'NV': ['Nevada', 'nevada', 'NV', ' nv '], 'NH': ['New Hampshire', 'new hampshire', 'NH', ' nh '], 'NJ': ['New Jersey', 'new jersey', 'NJ', ' nj '], 'NM': ['New Mexico', 'new mexico', 'NM', ' nm '], 'NY': ['New York', 'new york', 'NY', ' ny '], 'NC': ['North Carolina', 'north carolina', 'NC', ' nc '], 'ND': ['North Dakota', 'north dakota', 'ND', ' nd '], 'OH': ['Ohio', 'ohio', 'OH', ' oh '], 'OK': ['Oklahoma', 'oklahoma', 'OK', ' ok '], 'OR': ['Oregon', 'oregon', 'OR', ' or '], 'PA': ['Pennsylvania', 'pennsylvania', 'PA', ' pa '], 'RI': ['Rhode Island', 'rhode island', 'RI', ' ri '], 'SC': ['South Carolina', 'south carolina', 'SC', ' sc '], 'SD': ['South Dakota', 'south dakota', 'SD', ' sd '], 'TN': ['Tennessee', 'tennessee', 'TN', ' tn '], 'TX': ['Texas', 'texas', 'TX', ' tx '], 'UT': ['Utah', 'utah', 'UT', ' ut '], 'VT': ['Vermont', 'vermont', 'VT', ' vt '], 'VA': ['Virginia', 'virginia', 'VA', ' va '], 'WA': ['Washington', 'washington', 'WA', ' wa '], 'WV': ['West Virginia', 'west virginia', 'WV', ' wv '], 'WI': ['Wisconsin', 'wisconsin', 'WI', ' wi '], 'WY': ['Wyoming', 'wyoming', 'WY', ' wy '], 'PR': ['Puerto Rico', 'puerto rico', 'PR', ' pr ']} 
+
+#Loop through tweets, states to make state column used postal abbreviation for all tweets
+for tweet in located_tweets:
+    for key in state_dictionary:
+        if tweet['State'] in state_dictionary[key]:
+            tweet['State'] = key
+
+#convert tweet dictionaries to lists to write to csv
 l_tweets_list = []
 for i in located_tweets:
     l_tweets_list.append([i['Search Term'], i['Username'], i['Location'],i['State'], i['Verified User?'], i['Tweet ID'], i['Tweet Time'], i['Tweet Text'], i['Tweet Place'], i['Retweet Count'], i['Favorite Count']])

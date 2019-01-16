@@ -30,12 +30,14 @@ lc_state_abbrev_list = []
 for state in lc_state_abbrev_list_generator:
     lc_state_abbrev_list.append(state.lower())
 
-print(lc_state_abbrev_list)
+all_state_info = state_list + lc_state_list + state_abbrev_list + lc_state_abbrev_list
 
-
-
-
-
+located_tweets = []
+for dict in tweets:
+    for state in all_state_info:
+        if state in dict['Location']:
+            dict['State'] = state
+            located_tweets.append(dict)
 
 #make a list with just the tweets' text
 #location = []

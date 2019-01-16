@@ -34,21 +34,23 @@ all_state_info = state_list + lc_state_list + state_abbrev_list + lc_state_abbre
 
 located_tweets = []
 for dict in tweets:
-    for state in all_state_info:
-        if state in dict['Location']:
-            dict['State'] = state
-            located_tweets.append(dict)
+    #deal with DC first b/c it and Washington state will cause problems otherwise
+    if ('DC' in dict['Location'] or ' dc ' in dict['Location'] or 'Washington, DC' in dict['Location'] or 'washington dc' in dict['Location'] or 'Washington, dc' in dict['Location'] or 'Washington DC' in dict['Location']):
+        dict['State'] = 'DC'
+        located_tweets.append(dict)
+    else:
+        for state in all_state_info:
+            if state in dict['Location']:
+                dict['State'] = state
+                located_tweets.append(dict)
+                break
 
-#make a list with just the tweets' text
-#location = []
-#for tweet in tweets:
-#	location.append(tweet['Location'])
+l_tweets_list = []
+for i in located_tweets:
+    l_tweets_list.append([i['Search Term'], i['Username'], i['Location'],i['State'], i['Verified User?'], i['Tweet ID'], i['Tweet Time'], i['Tweet Text'], i['Tweet Place'], i['Retweet Count'], i['Favorite Count']])
 
-#print(location[0:10])
-
-# loop through the rows in the original csv
-#for row in reader:
-	# filter rows
-#    if 'CARPET' in row['PURPOSE'] and float(row['AMOUNT']) > 500:
-    	# write rows that match above filter
-#        writer.writerow(row)
+with open('located_tweets.csv','w') as f:
+    writer = csv.writer(f)
+    writer.writerow(['Search Term', 'Username', 'Location','State', 'Verified User?', 'Tweet ID', 'Tweet Time', 'Tweet Text', 'Tweet Place', 'Retweet Count', 'Favorite Count'])
+    for j in l_tweets_list:
+        writer.writerow(j)

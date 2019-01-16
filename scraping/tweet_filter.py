@@ -54,8 +54,26 @@ for tweet in edu_tweets:
 						else:
 							if ('for-profit' in tweet[' Tweet Text'].lower()) and ('school' in tweet[' Tweet Text'].lower() or 'college' in tweet[' Tweet Text'].lower() or 'university' in tweet[' Tweet Text'].lower() or 'higher education' in tweet[' Tweet Text'].lower()):
 								college_aff_tweets.append(tweet)
+							else:
+								if 'financial aid' in tweet[' Tweet Text'].lower():
+									college_aff_tweets.append(tweet)
+								else:
+									if '#activatetalent' in tweet[' Tweet Text'].lower():
+										college_aff_tweets.append(tweet)
+									else:
+										if 'loan' in tweet[' Tweet Text'].lower() and ('education' in tweet[' Tweet Text'].lower() or 'college' in tweet[' Tweet Text'].lower() or 'higher education' in tweet[' Tweet Text'].lower()):
+											college_aff_tweets.append(tweet)
 
 with open('college_aff_tweets.csv','w') as f:
 	d_wr = csv.DictWriter(f, attrib)
 	d_wr.writeheader()
 	d_wr.writerows(college_aff_tweets)
+
+cand_coll_aff_count = {}
+
+for tweet in college_aff_tweets:
+	cand = tweet['Candidate']
+	if cand in cand_coll_aff_count:
+		cand_coll_aff_count[cand] += 1
+	else:
+		cand_coll_aff_count[cand] = 1

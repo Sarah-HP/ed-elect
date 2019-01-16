@@ -1,4 +1,5 @@
 import csv
+from operator import itemgetter
 
 #First time through needed to install stuff
 #import nltk
@@ -57,8 +58,18 @@ for word in words:
 	else:
 		word_count[word] = 1
 
+#turn this into an ordered list of lists to produce ordered csv
+word_pair = []
+for i, j in word_count.items():
+	word_pair.append([i,j])
+
+sorted_word_pair = sorted(word_pair,key = itemgetter(1), reverse = True)
+
 with open('common_words.csv','w') as f:
 	writer = csv.writer(f)
 	writer.writerow(['Word','Frequency'])
-	for i, j in word_count.items():
-		writer.writerow([i, j])
+	for pair in sorted_word_pair:
+		writer.writerow(pair)
+
+	# i, j in word_count.items():
+	#	writer.writerow([i, j])

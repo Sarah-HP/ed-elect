@@ -1,4 +1,5 @@
 import csv
+from operator import itemgetter
 
 #Read in Tweets
 with open('aggregated.csv','r') as f:
@@ -136,4 +137,14 @@ with open ('../data/cand_2020.tsv','w') as f:
 	tsv_writer = csv.writer(f, delimiter = '\t')
 	tsv_writer.writerow(['candidate', 'ed_perc'])
 	for i in edu_tweet_perc:
+		tsv_writer.writerow(i)
+
+#sort data by education tweet percentage
+edu_tweet_perc_sorted = sorted(edu_tweet_perc, key = itemgetter(1))
+
+#Make CSV of same data but sorted alphabetically by candidate
+with open ('../data/cand_2020_sorted.tsv','w') as f:
+	tsv_writer = csv.writer(f, delimiter = '\t')
+	tsv_writer.writerow(['candidate', 'ed_perc'])
+	for i in edu_tweet_perc_sorted:
 		tsv_writer.writerow(i)

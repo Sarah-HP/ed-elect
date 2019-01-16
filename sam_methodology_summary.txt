@@ -12,3 +12,4 @@ To filter for education-related Tweets, I ran the aggregated set of candidate Tw
 
 That filter outputs a csv with the # of educational tweets by the candidate and the number of college affordability tweets.
 
+The filter also outputs tsvs with the percent of tweets by each candidate addressing education, one in alphabetical order and one in order of increasing frequency. Those data sets are the data for the plots on the 2020 candidates page.

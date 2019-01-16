@@ -17,20 +17,22 @@ edu_tweets = []
 #Make list of terms to search for to classify this as an education Tweet:
 edu_terms = ['Education', 'school', 'teacher', 'student', 'Sandy Hook', 'Newtown', 'Columbine', 'Stoneman Douglas', '#edpolicy', '#edreform', '#ESSA', '#putkidsfirst', '#achievementgap', '#edgap', '#literacy', '#nclb', '#essea', 'college', 'devos', 'highered', 'tuition', 'pre-k', 'kindergarten', 'achievement gap', 'K-12', 'k12', '#parentalchoice', '#parentpower', '#titleix', 'Title ix']
 
+#search through all tweets' text and add the ones with text from the term list to a new list
 for tweet in tweets:
 	for term in edu_terms:
 		if term.lower() in tweet[' Tweet Text'].lower():
 			edu_tweets.append(tweet)
 			break
 
-print(len(edu_tweets))
+#write the list of educational tweets to a csv
 attrib = edu_tweets[0].keys()
-
 with open('edu_tweets.csv','w') as f:
 	d_wr = csv.DictWriter(f, attrib)
 	d_wr.writeheader()
 	d_wr.writerows(edu_tweets)
 
+#filter the educational tweets to ones dealing with college affordability--sorry for the mess of terms
+#I didn't want generic uses of "college", for example, to get added to this, so I required mixes of terms, except for some specific stuff (e.g. Pell Grant, Bloomberg's hashtag ActivateTalent about a college affordability program) that could only really be about college affordability
 college_aff_tweets = []
 for tweet in edu_tweets:
 	if ('afford' in tweet[' Tweet Text'].lower()) and ('higher education' in tweet[' Tweet Text'].lower() or 'college' in tweet[' Tweet Text'].lower() or 'university' in tweet[' Tweet Text'].lower() or 'education' in tweet[' Tweet Text'].lower() or 'tuition' in tweet[' Tweet Text'].lower()):
@@ -103,7 +105,14 @@ for i in cand_list:
 		cand_edu_tweet_count[i] = 0
 	if i not in cand_coll_aff_count:
 		cand_coll_aff_count[i] = 0
-
+#now pull together cand name, edu tweet count, and college aff tweet count
 for i in cand_list:
 	cand_summary.append([i, cand_edu_tweet_count[i], cand_coll_aff_count[i]])
-print(cand_summary)
+
+
+#Write candidate summary to a CSV
+with open('edu_tweet_counts_by_cand.csv','w') as f:
+    writer = csv.writer(f)
+    writer.writerow(['candidate','education_tweets','college_affordability_tweets'])
+    for j in cand_summary:
+        writer.writerow(j)

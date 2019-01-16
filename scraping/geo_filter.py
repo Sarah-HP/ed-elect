@@ -11,6 +11,19 @@ for row in rows:
 	item=dict(row)
 	tweets.append(item)
 
+#Remove location punctuation so we don't miss locations like N.Y. This code adapted from common_words.py, which is adapted from https://www.programiz.com/python-programming/examples/remove-punctuation
+for tweet in tweets:
+    period = '.'
+    no_punc_loc = ''
+    for char in tweet['Location']:
+        if char not in period:
+            no_punc_loc = no_punc_loc + char
+    tweet['Location'] = no_punc_loc
+
+for i in tweets:
+    print(i['Location'])
+
+
 #List of state abbreviations taken from https://gist.github.com/rogerallen/1583593
 us_state_abbrev = {
     'Alabama': 'AL',

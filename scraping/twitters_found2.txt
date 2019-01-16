@@ -15,7 +15,7 @@
 ./t_scraper.py "Gabbard" "Gabbard_staff" 1064206014
 ./t_scraper.py "Inslee" "Inslee_office" 1077214808
 ./t_scraper.py "Inslee" "Inslee_campaign" 21789463
-./t_scraper.py "Hickenlooper" "Hickenlooper_office" 728344273620344832 #Last tweet Jan 3; later Tweets from new gov
+./t_scraper.py "Hickenlooper" "Hickenlooper_office" 728344273620344832 #Last tweet Jan 7; later Tweets from new gov
 ./t_scraper.py "Hickenlooper" "Hickenlooper_campaign" 117839957
 ./t_scraper.py "Landrieu" "Landrieu_campaign" 188000721
 ./t_scraper.py "ORourke" "ORourke_campaign" 342863309

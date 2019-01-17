@@ -9,3 +9,7 @@
 #toggles {
   text-align: center;
 }
+
+#toggles:hover {
+	cursor: pointer;
+}

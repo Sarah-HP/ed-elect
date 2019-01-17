@@ -59,6 +59,6 @@ use "ATP W26.DTA"
 	graph hbar legalgun_problem, over(F_CREGION_FINAL,  sort(1)) ///
 	title("Americans in the Northeast likely to see ease of legal" "access to guns as a contributor to gun violence.") ///
 	ytitle("Proportion who see legal gun access as contributor to violence") ///
-	blabel(bar, format(%9.1f)) ///
+	blabel(bar, format(%9.2f)) ///
 	note("Source of Data: The 2017 Pew Research Center's American Trends Panel," ///
 		"                       Wave 26 (April 4 – April 18, 2017)")

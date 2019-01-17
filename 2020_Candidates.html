@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
 	<title>Democratic Candidates for the 2020 Election: Thoughts on Education</title>
 	<link href="styles/a3style.css" rel="stylesheet" type="text/css">
 	<link href="styles/cand_chart.css" rel="stylesheet" type="text/css">
@@ -37,8 +38,10 @@
 
 	<p> We collected these data using the Python package Tweepy, which makes it possible to download recent Tweets by Twitter accounts. Generally, roughly the last three to four thousand Tweets are available by this method. Some candidates have multiple accounts, meaning that the number of Tweets collected for each candidated varied between roughly 1,500 (Biden) and nearly 7,500 (Booker). We then calculated what percentage of those Tweets included terms related to education (e.g. student, teacher, education, etc.). The plots themselves are adapted from <a href="http://bl.ocks.org/Caged/6476579">this code.</a></p>
 
-	<script src="http://d3js.org/d3.v3.min.js"></script>
-	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
+<!-- Run JavaScript scripts in the body -->
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<script src="scripts/tooltip.js"></script>
 	<script src="scripts/cand_chart_scr_sorted.js"></script>
 	<script src="scripts/cand_chart_scr.js"></script>
 

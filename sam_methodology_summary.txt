@@ -1,0 +1,13 @@
+Methodology behind school affordability Twitter data:
+
+- Scraped as many of candidates recent Tweets as possible using t_scraper.py on January 12, 2019 (see twitters_found.txt and twitters_found2.txt for the text that I copy/pasted into the command line to perform the scrapes. Note: in making this file as I aggregate the data, I noticed that twitters_found2.txt incorrectly noted the data at which Hickenlooper handed one account over to his successor as governor--I corrected it and the error doesn't affect any data we ultimately used--see description below of how I removed the Tweets not made by Hickenlooper/in his name)
+
+- Aggregated those tweets using command line - printed csv-style header to file using echo "[header]" > aggregated.csv, then combined Tweets cat *_tweets.csv >> aggregated.csv
+
+-Manually deleted Tweets from Colorado governor Twitter account (labeled in aggregated file as Hickenlooper_office) that were posted after new governor took office and took over Twitter (did this on Jan 16, ~3 PM--see commit in sam-aff branch)
+
+
+
+
+
+

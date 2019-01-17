@@ -142,9 +142,24 @@ with open ('../data/cand_2020.tsv','w') as f:
 #sort data by education tweet percentage
 edu_tweet_perc_sorted = sorted(edu_tweet_perc, key = itemgetter(1))
 
-#Make CSV of same data but sorted alphabetically by candidate
+#Make TSV of same data but sorted alphabetically by candidate
 with open ('../data/cand_2020_sorted.tsv','w') as f:
 	tsv_writer = csv.writer(f, delimiter = '\t')
 	tsv_writer.writerow(['candidate', 'ed_perc'])
 	for i in edu_tweet_perc_sorted:
+		tsv_writer.writerow(i)
+
+#Create list with % of educ tweets addressing affordability for each candidate:
+aff_over_educ_tweet_perc = []
+for i in cand_summary:
+	aff_over_educ_tweet_perc.append([i[0],i[3]/i[2]])
+
+#sort data by affordability tweet percentage
+aff_over_educ_tweet_perc_sorted = sorted(aff_over_educ_tweet_perc, key = itemgetter(1))
+
+#Write percentage of educational tweets to tsv as data for plot of candidate tweet %
+with open ('../data/cand_aff_2020.tsv','w') as f:
+	tsv_writer = csv.writer(f, delimiter = '\t')
+	tsv_writer.writerow(['candidate', 'aff_perc'])
+	for i in aff_over_educ_tweet_perc_sorted:
 		tsv_writer.writerow(i)

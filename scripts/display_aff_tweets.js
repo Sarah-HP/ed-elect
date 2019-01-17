@@ -1,6 +1,11 @@
 //each of these variables --b for button --
 //corresponds to the candidate's name displayed on the html page
 
+
+//Not showing up:
+//yang (and Ojeda, but that's expected--need to decide how to deal)
+//and need to separate style sheet
+
 b1 = document.getElementById("b1");
 b2 = document.getElementById("b2");
 b3 = document.getElementById("b3");
@@ -735,7 +740,7 @@ function show_div24() {
 
 
 function show_div25() {
-  div3.style.display="block";
+  div25.style.display="block";
   div2.style.display="none";
   div1.style.display="none";
   div4.style.display="none";
@@ -821,8 +826,8 @@ ID25 = ['1078456233856811009', '1078455340784590848', '1078453878197272577', '10
 //loop through the recent tweet IDs and display those tweets 
 //within the corresponding div tag
 
-var i;
-for (i in ID1) {
+
+for (let i in ID1) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID1[i],
@@ -832,8 +837,8 @@ for (i in ID1) {
 }
 
 
-var i;
-for (i in ID2) {
+
+for (let i in ID2) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID2[i],
@@ -843,8 +848,8 @@ for (i in ID2) {
 }
 
 
-var i;
-for (i in ID3) {
+
+for (let i in ID3) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID3[i],
@@ -854,8 +859,8 @@ for (i in ID3) {
 }
 
 
-var i;
-for (i in ID4) {
+
+for (let i in ID4) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID4[i],
@@ -865,8 +870,8 @@ for (i in ID4) {
 }
 
 
-var i;
-for (i in ID5) {
+
+for (let i in ID5) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID5[i],
@@ -876,8 +881,8 @@ for (i in ID5) {
 }
 
 
-var i;
-for (i in ID6) {
+
+for (let i in ID6) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID6[i],
@@ -887,8 +892,8 @@ for (i in ID6) {
 }
 
 
-var i;
-for (i in ID7) {
+
+for (let i in ID7) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID7[i],
@@ -898,8 +903,8 @@ for (i in ID7) {
 }
 
 
-var i;
-for (i in ID8) {
+
+for (let i in ID8) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID8[i],
@@ -909,8 +914,8 @@ for (i in ID8) {
 }
 
 
-var i;
-for (i in ID9) {
+
+for (let i in ID9) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID9[i],
@@ -921,8 +926,8 @@ for (i in ID9) {
 
 
 
-var i;
-for (i in ID10) {
+
+for (let i in ID10) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID10[i],
@@ -932,8 +937,8 @@ for (i in ID10) {
 }
 
 
-var i;
-for (i in ID11) {
+
+for (let i in ID11) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID11[i],
@@ -943,8 +948,8 @@ for (i in ID11) {
 }
 
 
-var i;
-for (i in ID12) {
+
+for (let i in ID12) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID12[i],
@@ -954,8 +959,8 @@ for (i in ID12) {
 }
 
 
-var i;
-for (i in ID13) {
+
+for (let i in ID13) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID13[i],
@@ -965,8 +970,8 @@ for (i in ID13) {
 }
 
 
-var i;
-for (i in ID14) {
+
+for (let i in ID14) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID14[i],
@@ -976,8 +981,8 @@ for (i in ID14) {
 }
 
 
-var i;
-for (i in ID15) {
+
+for (let i in ID15) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID15[i],
@@ -987,8 +992,8 @@ for (i in ID15) {
 }
 
 
-var i;
-for (i in ID16) {
+
+for (let i in ID16) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID16[i],
@@ -998,8 +1003,8 @@ for (i in ID16) {
 }
 
 
-var i;
-for (i in ID17) {
+
+for (let i in ID17) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID17[i],
@@ -1009,8 +1014,8 @@ for (i in ID17) {
 }
 
 
-var i;
-for (i in ID18) {
+
+for (let i in ID18) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID18[i],
@@ -1020,8 +1025,8 @@ for (i in ID18) {
 }
 
 
-var i;
-for (i in ID19) {
+
+for (let i in ID19) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID19[i],
@@ -1031,8 +1036,8 @@ for (i in ID19) {
 }
 
 
-var i;
-for (i in ID20) {
+
+for (let i in ID20) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID20[i],
@@ -1042,8 +1047,8 @@ for (i in ID20) {
 }
 
 
-var i;
-for (i in ID21) {
+
+for (let i in ID21) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID21[i],
@@ -1053,8 +1058,7 @@ for (i in ID21) {
 }
 
 
-var i;
-for (i in ID22) {
+for (let i in ID22) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID22[i],
@@ -1064,8 +1068,7 @@ for (i in ID22) {
 }
 
 
-var i;
-for (i in ID23) {
+for (let i in ID23) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID23[i],
@@ -1075,8 +1078,7 @@ for (i in ID23) {
 }
 
 
-var i;
-for (i in ID24) {
+for (let i in ID24) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID24[i],
@@ -1085,8 +1087,8 @@ for (i in ID24) {
 });
 }
 
-var i;
-for (i in ID25) {
+
+for (let i in ID25) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID25[i],

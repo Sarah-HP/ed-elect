@@ -16,8 +16,13 @@
   	overflow: scroll;
   }
 
-  .container {
+  .tweetcontent {
   	display: none;
+    margin: auto;
+  }
+
+  .toggles {
+    margin: auto;
   }
 
 </style>
@@ -27,132 +32,42 @@
 
 <body>
 
-<button id="b1">Hi</button>
 
-<button id="b2">Hi</button>
-
-<p>a</p>
-
-<div id="cand1" class="container"></div>
+<p id="toggles"><a id="b1">Biden</a> | <a id="b2">Bloomberg</a> | <a id="b3">Booker</a> | <a id="b4">Brown</a> | <a id="b5">Bullock</a> | <a id="b6">Buttigieg</a> | <a id="b7">Castro</a> | <a id="b8">Clinton</a> | <a id="b9">Cuomo</a> | <a id="b10">Delaney</a> | <a id="b11">Gabbard</a> | <a id="b12">Gillibrand</a> | <a id="b13">Harris</a> | <a id="b14">Hickenlooper</a> | <a id="b15">Inslee</a> | <a id="b16">Klobuchar</a> | <a id="b17">Landrieu</a> | <a id="b18">Merkley</a> | <a id="b19">Ojeda</a> | <a id="b20">O'Rourke</a> | <a id="b21">Sanders</a> | <a id="b22">Steyer</a> | <a id="b23">Swalwell</a> | <a id="b24">Warren</a> | <a id="b25">Yang</a></p>
 
 
-<div id="cand2" class="container"></div>
+<div id="cand1" class="tweetcontent"></div>
+<div id="cand2" class="tweetcontent"></div>
+<div id="cand3" class="tweetcontent"></div>
+<div id="cand4" class="tweetcontent"></div>
+<div id="cand5" class="tweetcontent"></div>
+<div id="cand6" class="tweetcontent"></div>
+<div id="cand7" class="tweetcontent"></div>
+<div id="cand8" class="tweetcontent"></div>
+<div id="cand9" class="tweetcontent"></div>
+<div id="cand10" class="tweetcontent"></div>
+<div id="cand11" class="tweetcontent"></div>
+<div id="cand12" class="tweetcontent"></div>
+<div id="cand13" class="tweetcontent"></div>
+<div id="cand14" class="tweetcontent"></div>
+<div id="cand15" class="tweetcontent"></div>
+<div id="cand16" class="tweetcontent"></div>
+<div id="cand17" class="tweetcontent"></div>
+<div id="cand18" class="tweetcontent"></div>
+<div id="cand19" class="tweetcontent"></div>
+<div id="cand20" class="tweetcontent"></div>
+<div id="cand21" class="tweetcontent"></div>
+<div id="cand22" class="tweetcontent"></div>
+<div id="cand23" class="tweetcontent"></div>
+<div id="cand24" class="tweetcontent"></div>
+<div id="cand25" class="tweetcontent"></div>
 
-<p>a</p>
 
-<!--Twitter javascript setup thing--put this first-->
+
+<!--Twitter javascript setup script--see file for source link-->
 <script src="scripts/twitter_embed_basic_code.js"></script>
 
-<script type="text/javascript">
-
-b1 = document.getElementById("b1");
-b2 = document.getElementById("b2");
-
-
-var div1 = document.getElementById("cand1");
-var div2 = document.getElementById("cand2");
-
-function show_div1() {
-	div1.style.display="block";
-  div2.style.display="collapse";
-}
-
-function show_div2() {
-  div2.style.display="block";
-  div1.style.display="collapse";
-}
-	
-b1.onclick = show_div1;
-b2.onclick = show_div2;
-
-//The portion of the script for embedding individual chunks of code is adapted from Twitter's developer documentation at https://developer.twitter.com/en/docs/twitter-for-websites/javascript-api/guides/scripting-factory-functions.html
-
-twttr.ready(function(twttr){
-  twttr.widgets.createTweet(
-    "724635991428988928",
-    document.getElementById("cand1"),
-  );
-});
-
-twttr.ready(function(twttr){
-  twttr.widgets.createTweet(
-    "724635991428988928",
-    document.getElementById("cand1"),
-  );
-});
-
-twttr.ready(function(twttr){
-  twttr.widgets.createTweet(
-    "724635991428988928",
-    document.getElementById("cand1"),
-  );
-});
-
-twttr.ready(function(twttr){
-  twttr.widgets.createTweet(
-    "556233242081492993",
-    document.getElementById("cand1"),
-  );
-});
-
-twttr.ready(function(twttr){
-  twttr.widgets.createTweet(
-    "556233242081492993",
-    document.getElementById("cand1"),
-  );
-});
-
-
-twttr.ready(function(twttr){
-  twttr.widgets.createTweet(
-    "556233242081492993",
-    document.getElementById("cand2"),
-  );
-});
-
-twttr.ready(function(twttr){
-  twttr.widgets.createTweet(
-    "724635991428988928",
-    document.getElementById("cand2"),
-  );
-});
-
-twttr.ready(function(twttr){
-  twttr.widgets.createTweet(
-    "724635991428988928",
-    document.getElementById("cand2"),
-  );
-});
-
-twttr.ready(function(twttr){
-  twttr.widgets.createTweet(
-    "556233242081492993",
-    document.getElementById("cand2"),
-  );
-});
-
-twttr.ready(function(twttr){
-  twttr.widgets.createTweet(
-    "556233242081492993",
-    document.getElementById("cand2"),
-  );
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-</script>
-
-
+<script type="text/javascript" src="scripts/display_aff_tweets.js"></script>
 
 </body>
 </html>

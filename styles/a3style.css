@@ -38,6 +38,12 @@ p {
     color: black;
 }
 
+/* This next style is for really small & inconsequential captions */
+h4 {
+	font-size: 8pt;
+}
+
+
 footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;

@@ -2,9 +2,6 @@
 //corresponds to the candidate's name displayed on the html page
 
 
-//Not showing up:
-//yang (and Ojeda, but that's expected--need to decide how to deal)
-//and need to separate style sheet
 
 b1 = document.getElementById("b1");
 b2 = document.getElementById("b2");

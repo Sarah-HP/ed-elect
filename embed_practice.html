@@ -16,7 +16,7 @@
   	overflow: scroll;
   }
 
-  #container {
+  .container {
   	display: none;
   }
 
@@ -29,37 +29,47 @@
 
 <button id="b1">Hi</button>
 
-<div id="cand1"></div>
+<button id="b2">Hi</button>
+
+<p>a</p>
+
+<div id="cand1" class="container"></div>
 
 
+<div id="cand2" class="container"></div>
+
+<p>a</p>
 
 <!--Twitter javascript setup thing--put this first-->
-<script src="scraping/twitter_embed_basic_code.js"></script>
-
-
-
+<script src="scripts/twitter_embed_basic_code.js"></script>
 
 <script type="text/javascript">
 
-id_1 = "724635991428988928";
+b1 = document.getElementById("b1");
+b2 = document.getElementById("b2");
 
-but = document.getElementById("b1")
 
-var div1 = document.getElementById("container");
+var div1 = document.getElementById("cand1");
+var div2 = document.getElementById("cand2");
 
 function show_div1() {
 	div1.style.display="block";
+  div2.style.display="collapse";
+}
+
+function show_div2() {
+  div2.style.display="block";
+  div1.style.display="collapse";
 }
 	
-but.onclick = show_div1;
-
-div1
+b1.onclick = show_div1;
+b2.onclick = show_div2;
 
 //The portion of the script for embedding individual chunks of code is adapted from Twitter's developer documentation at https://developer.twitter.com/en/docs/twitter-for-websites/javascript-api/guides/scripting-factory-functions.html
 
 twttr.ready(function(twttr){
   twttr.widgets.createTweet(
-    "id_1",
+    "724635991428988928",
     document.getElementById("cand1"),
   );
 });
@@ -91,6 +101,53 @@ twttr.ready(function(twttr){
     document.getElementById("cand1"),
   );
 });
+
+
+twttr.ready(function(twttr){
+  twttr.widgets.createTweet(
+    "556233242081492993",
+    document.getElementById("cand2"),
+  );
+});
+
+twttr.ready(function(twttr){
+  twttr.widgets.createTweet(
+    "724635991428988928",
+    document.getElementById("cand2"),
+  );
+});
+
+twttr.ready(function(twttr){
+  twttr.widgets.createTweet(
+    "724635991428988928",
+    document.getElementById("cand2"),
+  );
+});
+
+twttr.ready(function(twttr){
+  twttr.widgets.createTweet(
+    "556233242081492993",
+    document.getElementById("cand2"),
+  );
+});
+
+twttr.ready(function(twttr){
+  twttr.widgets.createTweet(
+    "556233242081492993",
+    document.getElementById("cand2"),
+  );
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 </script>

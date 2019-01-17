@@ -1,0 +1,101 @@
+
+<html>
+
+<head>
+
+<style>
+
+
+  div {
+  	width: 500px;
+  	height: 400px;
+  	margin: auto;
+  }
+
+  div {
+  	overflow: scroll;
+  }
+
+  #container {
+  	display: none;
+  }
+
+</style>
+
+</head>
+
+
+<body>
+
+<button id="b1">Hi</button>
+
+<div id="cand1"></div>
+
+
+
+<!--Twitter javascript setup thing--put this first-->
+<script src="scraping/twitter_embed_basic_code.js"></script>
+
+
+
+
+<script type="text/javascript">
+
+id_1 = "724635991428988928";
+
+but = document.getElementById("b1")
+
+var div1 = document.getElementById("container");
+
+function show_div1() {
+	div1.style.display="block";
+}
+	
+but.onclick = show_div1;
+
+div1
+
+//The portion of the script for embedding individual chunks of code is adapted from Twitter's developer documentation at https://developer.twitter.com/en/docs/twitter-for-websites/javascript-api/guides/scripting-factory-functions.html
+
+twttr.ready(function(twttr){
+  twttr.widgets.createTweet(
+    "id_1",
+    document.getElementById("cand1"),
+  );
+});
+
+twttr.ready(function(twttr){
+  twttr.widgets.createTweet(
+    "724635991428988928",
+    document.getElementById("cand1"),
+  );
+});
+
+twttr.ready(function(twttr){
+  twttr.widgets.createTweet(
+    "724635991428988928",
+    document.getElementById("cand1"),
+  );
+});
+
+twttr.ready(function(twttr){
+  twttr.widgets.createTweet(
+    "556233242081492993",
+    document.getElementById("cand1"),
+  );
+});
+
+twttr.ready(function(twttr){
+  twttr.widgets.createTweet(
+    "556233242081492993",
+    document.getElementById("cand1"),
+  );
+});
+
+
+</script>
+
+
+
+</body>
+</html>

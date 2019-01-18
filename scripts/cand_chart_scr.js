@@ -1,5 +1,9 @@
-var margin = {top: 60, right: 20, bottom: 160, left: 70},
-    width = 960 - margin.left - margin.right,
+// Because I'm running two very similar scripts on this page, at Ori's suggestion I'm wrapping them both
+// in functions so that they don't mess with one another, then immediately calling those functions.
+
+(function() {
+  var margin = {top: 60, right: 20, bottom: 160, left: 70},
+    width = 700 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
 var formatPercent = d3.format(".0%");
@@ -91,3 +95,4 @@ function type(d) {
   d.frequency = +d.frequency;
   return d;
 }
+})();

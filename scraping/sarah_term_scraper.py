@@ -20,11 +20,11 @@ args=parser.parse_args()
 
 search_for=args.search_term
 
-consumer_key="4eYCjEYePqarALTSD3Qb8HNS5"
-consumer_secret="dmquKnxJk11J5z1xYCPWHWh3s3bIVQg4vOANDnhcDoFatGSPIf"
+consumer_key=" "
+consumer_secret=" "
 
-access_token="1084467121101422593-08Im0HjW7Zq5K3bR0m8GHfZFJhQLne"
-access_token_secret="Pxn1gqO7MRj7JWcFsYhSnnLkOuIfYhV5EfkhZNp7zUuVz"
+access_token=" "
+access_token_secret=" "
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)

@@ -1,10 +1,3 @@
-
-body {
-    margin: 60px auto;
-    width: 70%;
-    padding: 25px;
-}
-
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
@@ -83,25 +76,51 @@ h1 {
 }
 
 html {
-	background-color: #ACCBE0
+	background-color: #d5f4e6
 }
 
+
+/*Using one of w3schools.com's suggested color palettes*/
 body {
-  width: 1200px;
-  margin: 100 auto;
-  background-color: #D3E0EA;
+  width: 75%;
+  margin: 0px auto;
+  background-color: #fefbd8;
   padding: 15px 15px 100px 15px;
   border: 3px solid black;
 }
 
 .quote {
-	border: 1px solid black;
+	    border: 1px solid black;
 }
 
 #mainquote {
 	color:darkslategray;
 }
 
+/* The following style for block quotes is from: https://www.css-tricks.com/examples/Blockquotes/ */
+blockquote.style1 {
+  font: 14px/20px italic Times, serif;
+  padding: 8px;
+  background-color: #faebbc; /* changed the colors here and below */
+  border-top: 1px solid #e1cc89;
+  border-bottom: 1px solid #e1cc89;
+  margin: 5px;
+  background-image: url(images/openquote1.gif);
+  background-position: top left;
+  background-repeat: no-repeat;
+  text-indent: 23px;
+  }
+  blockquote.style1 span {
+        display: block;
+        background-image: url(images/closequote1.gif);
+        background-repeat: no-repeat;
+        background-position: bottom right;
+    }
+
 .importanttext {
 	color:black;
+}
+
+.centerme {
+    text-align: center;
 }

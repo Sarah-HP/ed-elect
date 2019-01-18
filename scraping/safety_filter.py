@@ -22,6 +22,7 @@ edu_terms = ['Education', 'Parkland', 'school', 'teacher', 'student', 'Sandy Hoo
 #search through all tweets' text and add the ones with text from the term list to a new list
 for tweet in tweets:
 	for term in edu_terms:
+		#use lower case for everything so that case doesn't mess stuff up
 		if term.lower() in tweet[' Tweet Text'].lower():
 			edu_tweets.append(tweet)
 			break

@@ -38,6 +38,12 @@ p {
     color: black;
 }
 
+/* This next style is for really small & inconsequential captions */
+h4 {
+	font-size: 8pt;
+}
+
+
 footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
@@ -73,7 +79,6 @@ nav ul li, footer ul li {
 h1 {
 	font-size: 50px;
 	color: black;
-	width: 100000px;
 	border: 3px black;
 }
 

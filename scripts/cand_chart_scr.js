@@ -1,3 +1,6 @@
+// Because I'm running two very similar scripts on this page, at Ori's suggestion I'm wrapping them both
+// in functions so that they don't mess with one another, then immediately calling those functions.
+
 (function() {
   var margin = {top: 60, right: 20, bottom: 160, left: 70},
     width = 700 - margin.left - margin.right,

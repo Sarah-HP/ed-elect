@@ -90,12 +90,32 @@ body {
 }
 
 .quote {
-	border: 1px solid black;
+	    border: 1px solid black;
 }
 
 #mainquote {
 	color:darkslategray;
 }
+
+/* The following style for block quotes is from: https://www.css-tricks.com/examples/Blockquotes/ */
+blockquote.style1 {
+  font: 14px/20px italic Times, serif;
+  padding: 8px;
+  background-color: #faebbc; /* changed the colors here and below */
+  border-top: 1px solid #e1cc89;
+  border-bottom: 1px solid #e1cc89;
+  margin: 5px;
+  background-image: url(images/openquote1.gif);
+  background-position: top left;
+  background-repeat: no-repeat;
+  text-indent: 23px;
+  }
+  blockquote.style1 span {
+        display: block;
+        background-image: url(images/closequote1.gif);
+        background-repeat: no-repeat;
+        background-position: bottom right;
+    }
 
 .importanttext {
 	color:black;

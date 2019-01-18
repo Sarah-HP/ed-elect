@@ -11,13 +11,13 @@
 library(twitteR)
 library(tidyverse)
 
-api_key <- "4eYCjEYePqarALTSD3Qb8HNS5"
+api_key <- "key"
 
-api_secret <- "dmquKnxJk11J5z1xYCPWHWh3s3bIVQg4vOANDnhcDoFatGSPIf"
+api_secret <- "secret"
 
-token <- "1084467121101422593-08Im0HjW7Zq5K3bR0m8GHfZFJhQLne"
+token <- "token"
 
-token_secret <- "Pxn1gqO7MRj7JWcFsYhSnnLkOuIfYhV5EfkhZNp7zUuVz"
+token_secret <- "secret [fill in the numbers here]"
 
 setup_twitter_oauth(consumer_key = api_key, consumer_secret = api_secret, access_token = token, access_secret = token_secret)
 

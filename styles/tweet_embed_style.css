@@ -1,11 +1,23 @@
 .tweetcontent {
-  width: 500px;
-  height: 400px;
-  overflow: scroll;
+  width: 100%;
+  text-align: center;
   display: none;
   margin: auto;
 }
 
+.smaller-box {
+  width: 400px;
+  height: 350px;
+  display: inline-block;
+  margin: 15px;
+  overflow: scroll;
+  text-align: left;
+}
+
 #toggles {
   text-align: center;
+}
+
+#toggles:hover {
+	cursor: pointer;
 }

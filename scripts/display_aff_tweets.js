@@ -840,7 +840,7 @@ for (let i in ID1) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID1[i],
-    document.getElementById("cand1"),
+    document.getElementById("t1"),
   );
 });
 }

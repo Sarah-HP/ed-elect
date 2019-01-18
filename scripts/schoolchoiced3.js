@@ -117,7 +117,8 @@ var xAxis = config.xAxis;
       id: id,
       values: data.filter(function (d, i) {
         //CBT:remove last blank or value is 0 data to show only that much of line
-        if ((d[id] != 0 && d[id] != null && d[id] != undefined) || i == 0) return d;
+        ///Sarah: replaced i==0 with "null"
+        if ((d[id] != 0 && d[id] != null && d[id] != undefined) || i == null) return d;
       }).map(function (d, i) {
         var tempObj = {};
         tempObj[xAxis] = d[xAxis];
@@ -152,11 +153,7 @@ var xAxis = config.xAxis;
   }));
   y.domain([
     0,
-    d3.max(groupData, function (c) {
-      return d3.max(c.values, function (d) {
-        return d[yAxis];
-      });
-    })
+    100
   ]);
   z.domain(groupData.map(function (c) {
     return c.id;
@@ -166,7 +163,7 @@ var xAxis = config.xAxis;
     .attr("class", "axis axis--x")
     .attr("class", "title")
     .attr("transform", "translate(0," + height + ")") // If I change this 0 to 2000, the axis label becomes invisible
-    .call(d3.axisBottom(x))
+    .call(d3.axisBottom(x).ticks(6).tickFormat(d3.format(""))) // Change date so that it has no decimals on x-axis
     .append("text")
     .attr("x", width / 2)
     .attr("y", margin.bottom * 0.9)

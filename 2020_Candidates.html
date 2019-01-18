@@ -7,7 +7,8 @@
 	<link href="styles/cand_chart.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-		<h1>EdElect</h1>
+    <div class="headsection">
+		<h1 id="maintitle">EdElect</h1>
 
 		<nav>
     		<ul>
@@ -18,8 +19,10 @@
         		<li><a href="./2020_Candidates.html">2020 Candidates</a></li>
     		</ul>
 		</nav>
+  </div>
 
-	<div class="block_1"></div> <hr />
+  <div class="mainbody">
+		<div class="block_1"></div>
 
 			<h2>2020 Democratic Candidates & Education </h2>
 
@@ -37,7 +40,7 @@
 	<p> The three governors appear to discuss education issues most frequently. This makes sense, as education in the United States is primarily administered at the state and local levels. This does not explain, however, why Mayors Bloomberg and Landrieu rank so low by this analysis; one would expect city-level officials to have a great deal to say about education. Although it does not replace a more in-depth look at candidates' platforms, this assessment of candidates' Tweet frequency may speak to their interest in education, so education-interested stakeholders should factor these data into their decisions about whom to support. </p>
 
 	<p> We collected these data using the Python package Tweepy, which makes it possible to download recent Tweets by Twitter accounts. Generally, roughly the last three to four thousand Tweets are available by this method. Some candidates have multiple accounts, meaning that the number of Tweets collected for each candidated varied between roughly 1,500 (Biden) and nearly 7,500 (Booker). We then calculated what percentage of those Tweets included terms related to education (e.g. student, teacher, education, etc.). The plots themselves are adapted from <a href="http://bl.ocks.org/Caged/6476579">this code.</a></p>
-
+</div>
 
 <!-- Run JavaScript scripts in the body -->
 	<script src="https://d3js.org/d3.v3.min.js"></script>

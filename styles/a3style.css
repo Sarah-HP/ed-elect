@@ -83,7 +83,7 @@ html {
 /*Using one of w3schools.com's suggested color palettes*/
 body {
   width: 75%;
-  margin: 60px auto;
+  margin: 0px auto;
   background-color: #fefbd8;
   padding: 15px 15px 100px 15px;
   border: 3px solid black;

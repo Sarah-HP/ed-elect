@@ -851,7 +851,7 @@ for (let i in ID2) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID2[i],
-    document.getElementById("cand2"),
+    document.getElementById("t2"),
   );
 });
 }
@@ -862,7 +862,7 @@ for (let i in ID3) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID3[i],
-    document.getElementById("cand3"),
+    document.getElementById("t3"),
   );
 });
 }
@@ -873,7 +873,7 @@ for (let i in ID4) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID4[i],
-    document.getElementById("cand4"),
+    document.getElementById("t4"),
   );
 });
 }
@@ -884,7 +884,7 @@ for (let i in ID5) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID5[i],
-    document.getElementById("cand5"),
+    document.getElementById("t5"),
   );
 });
 }
@@ -895,7 +895,7 @@ for (let i in ID6) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID6[i],
-    document.getElementById("cand6"),
+    document.getElementById("t6"),
   );
 });
 }
@@ -906,7 +906,7 @@ for (let i in ID7) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID7[i],
-    document.getElementById("cand7"),
+    document.getElementById("t7"),
   );
 });
 }
@@ -917,7 +917,7 @@ for (let i in ID8) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID8[i],
-    document.getElementById("cand8"),
+    document.getElementById("t8"),
   );
 });
 }
@@ -928,7 +928,7 @@ for (let i in ID9) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID9[i],
-    document.getElementById("cand9"),
+    document.getElementById("t9"),
   );
 });
 }
@@ -940,7 +940,7 @@ for (let i in ID10) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID10[i],
-    document.getElementById("cand10"),
+    document.getElementById("t10"),
   );
 });
 }
@@ -951,7 +951,7 @@ for (let i in ID11) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID11[i],
-    document.getElementById("cand11"),
+    document.getElementById("t11"),
   );
 });
 }
@@ -962,7 +962,7 @@ for (let i in ID12) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID12[i],
-    document.getElementById("cand12"),
+    document.getElementById("t12"),
   );
 });
 }
@@ -973,7 +973,7 @@ for (let i in ID13) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID13[i],
-    document.getElementById("cand13"),
+    document.getElementById("t13"),
   );
 });
 }
@@ -984,7 +984,7 @@ for (let i in ID14) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID14[i],
-    document.getElementById("cand14"),
+    document.getElementById("t14"),
   );
 });
 }
@@ -995,7 +995,7 @@ for (let i in ID15) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID15[i],
-    document.getElementById("cand15"),
+    document.getElementById("t15"),
   );
 });
 }
@@ -1006,7 +1006,7 @@ for (let i in ID16) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID16[i],
-    document.getElementById("cand16"),
+    document.getElementById("t16"),
   );
 });
 }
@@ -1017,7 +1017,7 @@ for (let i in ID17) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID17[i],
-    document.getElementById("cand17"),
+    document.getElementById("t17"),
   );
 });
 }
@@ -1028,7 +1028,7 @@ for (let i in ID18) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID18[i],
-    document.getElementById("cand18"),
+    document.getElementById("t18"),
   );
 });
 }
@@ -1039,7 +1039,7 @@ for (let i in ID19) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID19[i],
-    document.getElementById("cand19"),
+    document.getElementById("t19"),
   );
 });
 }
@@ -1050,7 +1050,7 @@ for (let i in ID20) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID20[i],
-    document.getElementById("cand20"),
+    document.getElementById("t20"),
   );
 });
 }
@@ -1061,7 +1061,7 @@ for (let i in ID21) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID21[i],
-    document.getElementById("cand21"),
+    document.getElementById("t21"),
   );
 });
 }
@@ -1071,7 +1071,7 @@ for (let i in ID22) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID22[i],
-    document.getElementById("cand22"),
+    document.getElementById("t22"),
   );
 });
 }
@@ -1081,7 +1081,7 @@ for (let i in ID23) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID23[i],
-    document.getElementById("cand23"),
+    document.getElementById("t23"),
   );
 });
 }
@@ -1091,7 +1091,7 @@ for (let i in ID24) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID24[i],
-    document.getElementById("cand24"),
+    document.getElementById("t24"),
   );
 });
 }
@@ -1101,7 +1101,7 @@ for (let i in ID25) {
   twttr.ready(function(twttr){
   twttr.widgets.createTweet(
     ID25[i],
-    document.getElementById("cand25"),
+    document.getElementById("t25"),
   );
 });
 }

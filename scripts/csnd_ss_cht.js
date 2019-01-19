@@ -23,10 +23,10 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
-    return "<strong>Exact Proportion:</strong> <span style='color:black'>" + d.aff_perc + "</span>";
+    return "<strong>Exact Proportion:</strong> <span style='color:black'>" + d.ss_perc + "</span>";
   })
 
-var svg = d3.select("div#cand_aff_pct_tweet").append("svg")
+var svg = d3.select("div#cand_ss_pct_tweet").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .attr("class", "cand_2020")
@@ -35,9 +35,9 @@ var svg = d3.select("div#cand_aff_pct_tweet").append("svg")
 
 svg.call(tip);
 
-d3.tsv("data/cand_aff_2020.tsv", type, function(error, data) {
+d3.tsv("data/cand_ss_2020.tsv", type, function(error, data) {
   x.domain(data.map(function(d) { return d.candidate; }));
-  y.domain([0, d3.max(data, function(d) { return d.aff_perc; })]);
+  y.domain([0, d3.max(data, function(d) { return d.ss_perc; })]);
 
   svg.append("g")
       .attr("class", "x axis")
@@ -61,7 +61,7 @@ d3.tsv("data/cand_aff_2020.tsv", type, function(error, data) {
     .attr("x",width/2)
     .attr("y",0-(margin.top/2))
     .attr("text-anchor", "middle")
-    .text("Percentage of Education Tweets Discussing College")
+    .text("Percentage of Education Tweets Discussing School")
 
 // Add more plot title
 svg.append("text")
@@ -69,7 +69,7 @@ svg.append("text")
     .attr("x",width/2)
     .attr("y",0-(margin.top/5))
     .attr("text-anchor", "middle")
-    .text("Affordability by Candidate")
+    .text("Safety by Candidate")
 
   svg.append("g")
       .attr("class", "y axis")
@@ -87,8 +87,8 @@ svg.append("text")
       .attr("class", "bar")
       .attr("x", function(d) { return x(d.candidate); })
       .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.aff_perc); })
-      .attr("height", function(d) { return height - y(d.aff_perc); })
+      .attr("y", function(d) { return y(d.ss_perc); })
+      .attr("height", function(d) { return height - y(d.ss_perc); })
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide)
 

@@ -1,6 +1,7 @@
 // This is the .js for the graph of concerns about guns by region.
 
 //Manually input the data
+(function(){
         var data = [{
                 "name": "Northeast",
                 "value": .64,
@@ -94,4 +95,4 @@
             .text(function (d) {
                 return d.value;
             });
-        
+})();        

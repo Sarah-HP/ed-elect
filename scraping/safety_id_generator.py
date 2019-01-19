@@ -19,6 +19,9 @@ for tweet in tweets:
 		cand.append(tweet['Candidate'])
 
 #sort tweets by date so we get most recent
+#got lucky and dates are already in YYYY-MM-DD HR-MIN-SEC format,
+#so simple sort function will do the trick --no need to convert
+# date format or anything fancy.
 tweets_sorted = sorted(tweets, key = itemgetter(' Date'), reverse = True)
 
 #create dictionary to collect Tweet IDs from each candidate:

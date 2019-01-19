@@ -385,7 +385,8 @@ var columnsInfo = { "2614": "Support for Charters", "4449": "Support for Voucher
 $("#chart").empty();
 var muliSeriesChartConfig = {
     mainDiv: "#chart",
-    colorRange: ["#2a98cd", "#df7247"],
+    colorRange: ["#2a98cd", "#000080"],
+    // Changed the color from red to blue. Interestingly, the change only took effect when I also updated the SchoolChoice.html. This suggests to me that there is something redundant/funky with my code. For now it's working, so I am going to roll with it and possibly "iterate" later on to improve the overall tidiness.
     data: groupChartData,
     columnsInfo: columnsInfo,
     xAxis: "Year",

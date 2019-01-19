@@ -1,0 +1,22 @@
+        body {
+            font-family: "Arial", sans-serif;
+        }
+        
+        .bar {
+            fill: #6677FF; 
+        }
+        /*Changed the bar color to match the color used in Sam's d3 graphics about candidate tweets*/
+        
+        .axis {
+            font-size: 13px;
+        }
+        
+        .axis path,
+        .axis line {
+            fill: none;
+            display: none;
+        }
+        
+        .label {
+            font-size: 13px;
+        }

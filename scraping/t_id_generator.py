@@ -21,15 +21,19 @@ for tweet in tweets:
 #manually add Ojeda because he has no tweets about affordability
 cand.append('Ojeda')
 
+#sort tweets by date
+#got lucky and dates are already in YYYY-MM-DD HR-MIN-SEC format,
+#so simple sort function will do the trick --no need to convert
+# date format or anything fancy.
+tweets_sorted = sorted(tweets, key = itemgetter(' Date'), reverse = True)
+
 #create dictionary to collect Tweet IDs from each candidate:
 cand_count = {}
 for i in cand:
 	cand_count[i]=[]
 
 #loop through and add recent Tweets until there are 5 (or we're out of tweets)
-#relies on fact that tweets in CSV are ordered from recent to old, so we don't need to 
-#sort here
-for tweet in tweets:
+for tweet in tweets_sorted:
 	if len(cand_count[tweet['Candidate']]) <5:
 		cand_count[tweet['Candidate']].append(tweet[' Tweet ID'])
 

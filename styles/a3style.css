@@ -36,6 +36,10 @@ h4 {
 	font-size: 8pt;
 }
 
+/*Add some new list bullet styles, with help from https://resource-centre.net/css3-tutorials/css-bullet-points-lists/ */
+ul {
+ list-style-type:decimal;
+}
 
 footer {
     border-top: 1px solid #d5d5d5;
@@ -68,13 +72,13 @@ nav ul li, footer ul li {
     margin-right: 20px;
 }
 
-
-h1 {
+/*I think this h1 is redundant. Delete?*/
+/*h1 {
 	font-size: 50px;
 	color: black;
 	border: 3px black;
 }
-
+*/
 html {
 	background-color: #d5f4e6
 }

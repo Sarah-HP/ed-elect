@@ -2,7 +2,7 @@ import csv
 from operator import itemgetter
 
 #Read in Tweets
-with open('college_aff_tweets.csv','r') as f:
+with open('safety_tweets.csv','r') as f:
 	reader = csv.DictReader(f)
 	rows = list(reader)
 
@@ -18,9 +18,6 @@ for tweet in tweets:
 	if tweet['Candidate'] not in cand:
 		cand.append(tweet['Candidate'])
 
-#manually add Ojeda because he has no tweets about affordability
-cand.append('Ojeda')
-
 #create dictionary to collect Tweet IDs from each candidate:
 cand_count = {}
 for i in cand:
@@ -35,3 +32,4 @@ sorted_cand=sorted(cand)
 
 for i in range(1,len(sorted_cand)+1):
 	print('var ID'+ str(i) + ' = ' +  str(cand_count[sorted_cand[i-1]])+ ''' //''' +str(sorted_cand[i-1]))
+

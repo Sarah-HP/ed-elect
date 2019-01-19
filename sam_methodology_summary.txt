@@ -15,4 +15,4 @@ That filter outputs a csv with the # of educational tweets by the candidate and 
 The filter also outputs tsvs with the percent of tweets by each candidate addressing education, one in alphabetical order and one in order of increasing frequency. Those data sets are the data for the plots on the 2020 candidates page.
 
 
-The script t_id_generator.py then takes the affordable tweets spreadsheet and creates a list of the candidate's (up to 5) most recent Tweets on college affordability, which I printed to a text file (python3 t_id_generator.py > recent_aff_college_tweet_ids.txt) along with the candidate names. I took the tweet IDs from that file and plugged them into display_aff_tweets.js.
+The script t_id_generator.py then takes the affordable tweets spreadsheet and creates a list of the candidate's (up to 5) most recent Tweets on college affordability, which I printed to a text file (python3 t_id_generator.py > recent_aff_college_tweet_ids.txt) along with the candidate names. I took the tweet IDs from that file and plugged them into display_aff_tweets.js (the id generator gives them in the right format to just copy/paste into the javascript file)

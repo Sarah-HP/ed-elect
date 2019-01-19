@@ -48,13 +48,16 @@
 <div>
 
 <!--Add the D3-->
+<!-- I'm going to try putting it inside div tags to change the object width -->
+<div style="width: 80%; height: 500px; overflow:hidden;">
+    <!-- Strangely enough, if you change the window size, the page needs to be refreshed to maintain the correct dimensions. Nevertheless, it seems to work! -->
 
  <!-- Load in the scripts -->
  <!-- Made the first script a  -->
     <script src="https://code.jquery.com/jquery-latest.min.js"></script> 
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="scripts/schoolchoiced3.js"></script>
-    <div id="chart" style="width: 800;height: 500">
+    <div id="chart" style="width: 800;height: 500px">
     </div>
 
 
@@ -86,8 +89,8 @@
     var muliSeriesChart = new multiSeriesLineChart(muliSeriesChartConfig);
 
 </script>
-
 </div>
+
 
 	<img src="Images/SchoolChoice.JPG" alt="School Choice Graphic" width="600">
 

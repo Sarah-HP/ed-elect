@@ -6,6 +6,7 @@
 	<link href="styles/a3style.css" rel="stylesheet" type="text/css">
     <link href="styles/tweet_embed_style.css" rel="stylesheet" type="text/css">
     <link href="styles/cand_chart.css" rel="stylesheet" type="text/css">
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 <body>
     <div class="headsection">
@@ -31,8 +32,13 @@
 
 <p> In 2017 the Pew Center found that the majority of surveyed Americans view the ease of legal access to guns as a factor that contributes "A great deal" or "A fair amount" to gun violence. </p>
 
-<img src="Images/american_gunopinions.JPG" alt="Legal gun purchases and violence" width="600">
-<h4> Disclaimer: “The opinions expressed herein, including any implications for policy, are those of the author and not of Pew Research Center.” </h4>
+<!-- Adding a new D3. It's not interactive, but at least it has no background color and matches the style of other bar graphs. -->
+
+<h3 class="centerme">Americans in the Northeast most likely to see ease of legal access to guns as a contributor to gun violence</h3>
+<div id="graphic"></div>
+<link href="styles/gunsandregions.css" rel="stylesheet" type="text/css">
+<h4>Source: <a href="http://www.pewsocialtrends.org/dataset/american-trends-panel-wave-26/">The 2017 Pew Research Center's American Trends Panel, Wave 26 (April 4-April 18, 2017</a>. The opinions expressed herein, including any implications for policy, are those of the author and not of Pew Research Center. Graphic adapted from: <a href="https://bl.ocks.org/hrecht/f84012ee860cb4da66331f18d588eee3">bl.ocks.org.</a></h4>
+<!-- End of d3 experiment -->
 
 <p> In spite of the widespread sentiment that access to guns exacerbates issues of violent crime, gun reform remains a highly contentious issue, with groups like the NRA resisting proposed legislation. Such resistance complicates the task of policymakers and voters wishing to identify viable means of curbing gun violence. </p> 
 
@@ -142,6 +148,7 @@
   <script src="https://d3js.org/d3.v3.min.js"></script>
   <script src="scripts/tooltip.js"></script>
   <script src="scripts/cand_ss_cht.js"></script>
+  <script src="scripts/gunsandschools.js"></script>
 
 </body>
 </html>

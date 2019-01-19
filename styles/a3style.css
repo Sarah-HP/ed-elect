@@ -36,6 +36,10 @@ h4 {
 	font-size: 8pt;
 }
 
+/*Add some new list bullet styles, with help from https://resource-centre.net/css3-tutorials/css-bullet-points-lists/ */
+ul {
+ list-style-type:decimal;
+}
 
 footer {
     border-top: 1px solid #d5d5d5;
@@ -68,13 +72,13 @@ nav ul li, footer ul li {
     margin-right: 20px;
 }
 
-
-h1 {
+/*I think this h1 is redundant. Delete?*/
+/*h1 {
 	font-size: 50px;
 	color: black;
 	border: 3px black;
 }
-
+*/
 html {
 	background-color: #d5f4e6
 }
@@ -162,4 +166,22 @@ blockquote {
 
 .centerme {
     text-align: center;
+}
+
+/*These next three chunks of code (for footnotes) are taken wholesale*/
+/*from http://jsbin.com/cexeyegodo/edit?html,css,output*/
+/*which I found from https://stackoverflow.com/questions/40336366/in-line-footnotes-with-only-html-css-in-notes*/
+/*Just trying to make this look as FiveThirtyEight as possible*/
+/*so you'll feel at home, but one massive .js full of repeats is */
+/*enough, so I'm not using the .js version*/
+.footnoteText {
+  display: none;
+  color: black;
+  font-size: 10pt;
+}
+.footnote:focus + .footnoteText {
+  display: block;
+}
+.close:focus .footnoteText {
+  display: none;
 }

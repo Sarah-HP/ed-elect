@@ -1,0 +1,15 @@
+To create the graphic:
+
+1) Took the data saved as "tabn216.90xls"
+
+2) Manually removed the "...." after each state name (example: "Alabama ...................." became "Alabama")
+
+3) Pasted the contents of column O into datawrapper's chloroplath map of the U.S. (available here: https://app.datawrapper.de/map/6FRcb/data)
+
+4) This yielded a graphic with an embed code, which I pasted into the relevant part of our website.
+
+
+--------------------------------
+
+Retrieved data from https://nces.ed.gov/programs/digest/d17/tables/dt17_216.90.asp
+"Table 216.90.	Public elementary and secondary charter schools and enrollment, by state: Selected years, 2000-01 through 2015-16"SOURCE: U.S. Department of Education, National Center for Education Statistics, Common Core of Data (CCD), "Public Elementary/Secondary School Universe Survey," 2000-01 through 2015-16. (This table was prepared August 2017.)

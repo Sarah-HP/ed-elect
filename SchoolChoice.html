@@ -38,22 +38,22 @@
 
 	<p> Since the appointment of Secretary of Education Betsy DeVos, vouchers as a form of school choice have taken on even greater salience. Questions of education will undoubtedly loom large in the 2020 presidential election.</p>
 
-	<p> A recent poll of opinion data reveals that across parties, charter schools enjoy more popularity as a form of school choice than do vouchers. This is particularly true in the Republican Party, although Republican support for vouchers appears to have stagnated at around 40% </p>
-
-	<p> Democrats exhibit a slightly different trend, with vouchers actually enjoying more popularity than charter schools. </p>
-
-	<p> Notably, teachers (shown in the graph below in black and grey lines) are generally less supportive of alternatives to traditional public schools.</p>
+	<p> A recent poll of opinion data reveals that Democrats have lukework support toward charrter schools and school vouchers. </p>
 
 
 <div>
 
 <!--Add the D3-->
+<!-- I'm going to try putting it inside div tags to change the object width -->
+<div style="width: 80%; height: 500px; overflow:hidden;">
+    <!-- Strangely enough, if you change the window size, the page needs to be refreshed to maintain the correct dimensions. Nevertheless, it seems to work! -->
 
  <!-- Load in the scripts -->
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+ <!-- Made the first script a  -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script> 
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="scripts/schoolchoiced3.js"></script>
-    <div id="chart" style="width: 800;height: 500">
+    <div id="chart" style="width: 800;height: 500px">
     </div>
 
 
@@ -70,7 +70,7 @@
     $("#chart").empty();
     var muliSeriesChartConfig = {
         mainDiv: "#chart",
-        colorRange: ["#2a98cd", "#df7247"],
+        colorRange: ["#2a98cd", "#00a300"],
         data: groupChartData,
         columnsInfo: columnsInfo,
         xAxis: "Year",
@@ -85,15 +85,26 @@
     var muliSeriesChart = new multiSeriesLineChart(muliSeriesChartConfig);
 
 </script>
-
 </div>
 
-	<img src="Images/SchoolChoice.JPG" alt="School Choice Graphic" width="600">
+<h4> Source: <a href="https://educationnext.org/files/ednext-poll-question-wording-over-time-through-2018.pdf
+">Education Next, Program on Education Policy and Governance: Trends in the EdNext Survey: Question Wording and Data Over Time </a></h4>
+<h4> Graphic adapted fro: <a href="http://bl.ocks.org/ChandrakantThakkarDigiCorp/be18bb176b5050b55a32c05060bad11e">bl.ocks.org</a></h4>
 
-	<div>
-	<p> Source of Data: https://educationnext.org/files/ednext-poll-question-wording-over-time-through-2018.pdf </p>
+<p> School choice enjoys somewhat more popularity among the Republican party. Interestingly enough, teachers have been the least enthusiastic about charter and voucher programs. This suggests that opinions on educational reform do not always cleave neatly to party lines. </p>
 
-	</div>
+<p> A 2018 poll from Education Next used the following questions to gauge the latest trends in public opinion.</p>
+
+<ul>
+    <p> 1. As you may know, many states permit the formation of charter schools, which are publicly funded but are not managed by the local school board.  These schools are expected to meet promised objectives, but are exempt from many state regulations. Do you support or oppose the formation of charter schools? </p>
+    <p> 2. A proposal has been made that would give low-income families with children in public schools a voucher allowing them to enroll their children in attend[sic] private schools instead, with government helping to pay the tuition. Would you support or oppose the proposal? </p>
+</ul>
+
+<img src="Images/demographic_support_charter_voucher.png" alt="School Choice Graphic" width="600">
+
+<h4> Source: <a href="https://www.educationnext.org/files/2018ednextpoll.pdf"
+">Education Next, Program   on Education Policy and Governance -- Survey 2018 </a></h4>
+<h4> Graphic adapted from: <a href="http://bl.ocks.org/ChandrakantThakkarDigiCorp/be18bb176b5050b55a32c05060bad11e">bl.ocks.org</a></h4>
 
 
 

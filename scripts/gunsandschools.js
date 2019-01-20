@@ -61,7 +61,7 @@
             .orient("left");
 
         var gy = svg.append("g")
-            .attr("class", "y axis")
+            .attr("class", "y regionaxis")
             .call(yAxis)
 
         var bars = svg.selectAll(".bar")
@@ -83,7 +83,7 @@
 
         //add a value label to the right of each bar
         bars.append("text")
-            .attr("class", "label")
+            .attr("class", "regionlabel")
             //y position of the label is halfway down the bar
             .attr("y", function (d) {
                 return y(d.name) + y.rangeBand() / 2 + 4;

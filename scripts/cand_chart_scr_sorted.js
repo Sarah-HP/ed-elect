@@ -63,7 +63,7 @@
       .attr("x",width/2)
       .attr("y",0-(margin.top/2))
       .attr("text-anchor", "middle")
-      .text("Percentage of Tweets Including Education-Related Terms by Candidate")
+      .text("Percentage of tweets with education-related terms by candidate")
 
 
     svg2.append("g")

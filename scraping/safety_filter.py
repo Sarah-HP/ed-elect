@@ -1,8 +1,9 @@
 import csv
 from operator import itemgetter
 
-#This is based on tweet_filter.py, but adapted to look for tweets about school safety, not
+#This is based on tweet_filter.py, but adapted to look for tweets about school safety, not affordability
 
+#Read in all tweets
 with open('aggregated.csv','r') as f:
 	reader = csv.DictReader(f)
 	rows = list(reader)
@@ -14,12 +15,13 @@ for row in rows:
 	tweets.append(dict(row))
 
 #filter to education tweets
+#make empty list to fill with tweets
 edu_tweets = []
 
 #Make list of terms to search for to classify this as an education Tweet:
 edu_terms = ['Education', 'Parkland', 'school', 'teacher', 'student', 'Sandy Hook', 'Newtown', 'Columbine', 'Stoneman Douglas', '#edpolicy', '#edreform', '#ESSA', '#putkidsfirst', '#achievementgap', '#edgap', '#literacy', '#nclb', '#essea', 'college', 'devos', 'highered', 'tuition', 'pre-k', 'kindergarten', 'achievement gap', 'K-12', 'k12', '#parentalchoice', '#parentpower', '#titleix', 'Title ix']
 
-#search through all tweets' text and add the ones with text from the term list to a new list
+#search through all tweets' text and add the ones with text from the term list to a new list of edu_tweets
 for tweet in tweets:
 	for term in edu_terms:
 		#use lower case for everything so that case doesn't mess stuff up
@@ -87,9 +89,7 @@ for tweet in tweets:
 		cand_list.append(cand)
 
 #Make list of lists--[name,all tweets, edu tweets, safety tweets]
-
-
-#now make list of lists:
+#make empty list to fill in
 cand_summary = []
 #avoid any key errors in case a candidate has no entries in the safety tweet count 
 for i in cand_list:

@@ -7,12 +7,12 @@
         }
         /*Changed the bar color to match the color used in Sam's d3 graphics about candidate tweets*/
         
-        .axis {
+        .regionaxis {
             font-size: 13px;
         }
         
-        .axis path,
-        .axis line {
+        .regionaxis path,
+        .regionaxis line {
             fill: none;
             display: none;
         }

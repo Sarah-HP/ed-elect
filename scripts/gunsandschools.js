@@ -61,7 +61,7 @@
             .orient("left");
 
         var gy = svg.append("g")
-            .attr("class", "y axis")
+            .attr("class", "y regionaxis")
             .call(yAxis)
 
         var bars = svg.selectAll(".bar")

@@ -55,14 +55,14 @@ d3.tsv("data/cand_aff_2020.tsv", type, function(error, data) {
     .attr("text-anchor", "end")
     .attr("x", width/2)
     .attr("y", height+150)
-    .text("Candidate Name");
+    .text("Candidate name");
 
   svg.append("text")
     .attr("class", "plot title")
     .attr("x",width/2)
     .attr("y",0-(margin.top/2))
     .attr("text-anchor", "middle")
-    .text("Percentage of Education Tweets Discussing College")
+    .text("Percentage of education tweets discussing college")
 
 // Add more plot title
 svg.append("text")
@@ -70,7 +70,7 @@ svg.append("text")
     .attr("x",width/2)
     .attr("y",0-(margin.top/5))
     .attr("text-anchor", "middle")
-    .text("Affordability by Candidate")
+    .text("affordability by candidate")
 
   svg.append("g")
       .attr("class", "y axis")

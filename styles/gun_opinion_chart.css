@@ -1,0 +1,21 @@
+.gunline1 {
+  fill: none;
+  stroke: red;
+  stroke-width: 2px;
+}
+
+.gundots {
+  stroke: red;
+  fill: red;
+}
+
+.gunline2{
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+.gundots2 {
+  stroke: steelblue;
+  fill: steelblue;
+}

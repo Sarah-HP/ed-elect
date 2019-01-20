@@ -56,7 +56,7 @@
       .attr("text-anchor", "end")
       .attr("x", width/2)
       .attr("y", height+150)
-      .text("Candidate Name");
+      .text("Candidate name");
 
     svg2.append("text")
       .attr("class", "plot title")

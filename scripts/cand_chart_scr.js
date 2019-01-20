@@ -65,7 +65,7 @@ d3.tsv("data/cand_2020.tsv", type, function(error, data) {
     .attr("x",width/2)
     .attr("y",0-(margin.top/2))
     .attr("text-anchor", "middle")
-    .text("Percentage of Tweets Including Education-Related Terms by Candidate")
+    .text("Percentage of Tweets with Education-Related Terms by Candidate")
 
 
   svg.append("g")

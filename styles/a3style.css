@@ -6,6 +6,7 @@ nav ul, footer ul {
     font-size: 15pt;
 }
 
+
 nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
@@ -41,8 +42,9 @@ ul {
  list-style-type:decimal;
 }
 
+/*This is the color on the edgeof the page*/
 footer {
-    border-top: 1px solid #d5d5d5;
+    border-top: 1px solid #dddddd;
     font-size: .8em;
 }
 
@@ -64,8 +66,6 @@ nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
     list-style: none;
-    color: black;
-    /*I added the color black here, but it doesn't seem to help*/
     font-weight: bold;
 }
 
@@ -81,14 +81,8 @@ nav ul li, footer ul li {
 	border: 3px black;
 }
 */
-
-/*Add a bold font style*/
-p.thick {
-  font-weight: bold;
-}
-
 html {
-	background-color: #d5f4e6
+	background-color: #B7C3D0
 }
 
 #maintitle {
@@ -100,7 +94,8 @@ html {
 .mainbody {
   width: 900px;
   margin: 0px auto;
-  background-color: #FFFFFF;
+  background-color: #FFFFFF; 
+  /*Set the background color to white*/
   padding: 15px 15px 100px 15px;
   border: 3px solid black;
 }
@@ -119,7 +114,7 @@ html {
 {
   width: 900px;
   margin: 0px auto;
-  background-color: #618685;
+  background-color: #555555;
   padding: 15px 15px 0px 15px;
   border: 3px solid black;
 }
@@ -130,7 +125,7 @@ html {
   {
     width: 75%;
     margin: 0px auto;
-    background-color: #618685;
+    background-color: #555555;
     padding: 15px 15px 0px 15px;
     border: 3px solid black;
   }
@@ -152,8 +147,8 @@ blockquote {
   font-style: italic;
   padding: 8px;
   background-color: #FFFFFF; /* changed the colors here and below */
-  border-top: 1px solid #0f2944;
-  border-bottom: 1px solid #0f2944;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
   margin: 5px;
   background-image: url(images/openquote1.gif);
   background-position: top left;
@@ -174,4 +169,22 @@ blockquote {
 
 .centerme {
     text-align: center;
+}
+
+/*These next three chunks of code (for footnotes) are taken wholesale*/
+/*from http://jsbin.com/cexeyegodo/edit?html,css,output*/
+/*which I found from https://stackoverflow.com/questions/40336366/in-line-footnotes-with-only-html-css-in-notes*/
+/*Just trying to make this look as FiveThirtyEight as possible*/
+/*so you'll feel at home, but one massive .js full of repeats is */
+/*enough, so I'm not using the .js version*/
+.footnoteText {
+  display: none;
+  color: black;
+  font-size: 10pt;
+}
+.footnote:focus + .footnoteText {
+  display: block;
+}
+.close:focus .footnoteText {
+  display: none;
 }

@@ -32,10 +32,16 @@ p {
     color: black;
 }
 
+/*Going to specify the padding for h3, which is currently way too big*/
+/*Actually, this doesn't seem to accomplish much. Back into the comments*/
+/*h3 {
+  padding: 0px 0px 0px 0px;
+}
+*/
 /* This next style is for really small & inconsequential captions */
 h4 {
 	font-size: 8pt;
-  padding: 0px 0px 10px 50px;
+  padding: 0px 0px 10px 60px;
 }
 
 /*This one is for sub-headings*/

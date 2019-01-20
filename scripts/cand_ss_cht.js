@@ -55,14 +55,14 @@
       .attr("text-anchor", "end")
       .attr("x", width/2)
       .attr("y", height+150)
-      .text("Candidate Name");
+      .text("Candidate name");
 
     svg.append("text")
       .attr("class", "plot title")
       .attr("x",width/2)
       .attr("y",0-(margin.top/2))
       .attr("text-anchor", "middle")
-      .text("Percentage of Education Tweets Discussing School")
+      .text("Percentage of education tweets discussing school")
 
   // Add more plot title
   svg.append("text")
@@ -70,7 +70,7 @@
       .attr("x",width/2)
       .attr("y",0-(margin.top/5))
       .attr("text-anchor", "middle")
-      .text("Safety by Candidate")
+      .text("safety by candidate")
 
     svg.append("g")
         .attr("class", "y axis")

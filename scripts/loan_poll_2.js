@@ -23,9 +23,9 @@ var svg = d3.select("div#opinion_1")
 /* Data in strings like it would be if imported from a csv */
 //Change data
 var data = [
-  { gender: "18-34", support: "70", oppose: "12", no_opinion: "18" },
-  { gender: "35-54 ", support: "62", oppose: "24", no_opinion: "14" },
-  { gender: "55+", support: "49", oppose: "36", no_opinion: "15" },
+  { gender: "18-34", support: "63", oppose: "31", no_opinion: "6" },
+  { gender: "35-54 ", support: "48", oppose: "43", no_opinion: "9" },
+  { gender: "55+", support: "37", oppose: "55", no_opinion: "8" },
 ];
 
 // var parse = d3.time.format("%Y").parse;

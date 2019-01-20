@@ -64,6 +64,8 @@ nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
     list-style: none;
+    color: black;
+    /*I added the color black here, but it doesn't seem to help*/
     font-weight: bold;
 }
 
@@ -98,7 +100,7 @@ html {
 .mainbody {
   width: 900px;
   margin: 0px auto;
-  background-color: #fefbd8;
+  background-color: #FFFFFF;
   padding: 15px 15px 100px 15px;
   border: 3px solid black;
 }
@@ -107,7 +109,7 @@ html {
    .mainbody {
     width: 75%;
     margin: 0px auto;
-    background-color: #fefbd8;
+    background-color: #FFFFFF;
     padding: 15px 15px 100px 15px;
     border: 3px solid black;
   }
@@ -149,7 +151,7 @@ blockquote {
   color: darkslategray;
   font-style: italic;
   padding: 8px;
-  background-color: #fefbd8; /* changed the colors here and below */
+  background-color: #FFFFFF; /* changed the colors here and below */
   border-top: 1px solid #0f2944;
   border-bottom: 1px solid #0f2944;
   margin: 5px;

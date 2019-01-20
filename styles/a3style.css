@@ -188,3 +188,8 @@ blockquote {
 .close:focus .footnoteText {
   display: none;
 }
+
+/*Style for chart-associated text:*/
+.textofchart{
+ font-family: Georgia, serif;
+}

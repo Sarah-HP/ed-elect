@@ -1,3 +1,4 @@
+(function() {
 var margin = {top: 60, right: 20, bottom: 160, left: 70},
     width = 700 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
@@ -98,3 +99,4 @@ function type(d) {
   d.frequency = +d.frequency;
   return d;
 }
+})();

@@ -2,6 +2,10 @@
   font: 10px sans-serif;
 }
 
+.cand-chart {
+  text-align: center;
+}
+
 .cand_2020 .axis path,
 .axis line {
   fill: none;

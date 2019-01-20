@@ -6,7 +6,8 @@
 	<link href="styles/a3style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-		<h1>EdElect</h1>
+    <div class="headsection">
+		<h1 id="maintitle">EdElect</h1>
 
 		<nav>
     		<ul>
@@ -17,52 +18,106 @@
         		<li><a href="./2020_Candidates.html">2020 Candidates</a></li>
     		</ul>
 		</nav>
-	<div class="block_1"></div> <hr />
+  </div>
+
+<div class="mainbody">
 
 		<h2>School Choice</h2>
-
 
 	<p> The two most widely discussed types of school choice in the United States are vouchers and charter schools. The nation's first charter school was <a href="https://www.businessinsider.com/inside-the-first-charter-school-in-america-city-academy-2015-6">founded in 1992</a>. By the 2015-2016 academic year, charter schools constituted a full 7% of the nation's public schools. The distribution of these schools is highly uneven. For example, 49.1% of the D.C. public schools and 24.2% of Arizona schools were charter schools. At the other end of the distribution are Alabama, Montana, Nebraska, South Dakota, Vermont, West Virginia, none of which had charter schools in the year under consideration.</p> 
 
 	<!--Embed a chart created in datawrapper. I initially attempte a d3 visualization but struggled with the compatability of the data.-->
 		<div>
 			<iframe id="datawrapper-chart-ZcIEN" src="//datawrapper.dwcdn.net/ZcIEN/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important;" height="400"></iframe>
-			<div> 
+		</div> 
 	
+
 	<p> As of 2016, the Democratic National Committee expressed general support for charter schools, though the party platform criticized for-profit charters and addressed concerns that charter schools are underrepresenting minority students: </p>
 
-	
+	<blockquote> Democrats are committed to providing parents with high-quality public school options and expanding these options for low-income youth. We support democratically governed, great neighborhood public schools and high-quality public charter schools, and we will help them disseminate best practices to other school leaders and educators. Democrats oppose for-profit charter schools focused on making a profit off of public resources. We believe that high-quality public charter schools should provide options for parents, but should not replace or destabilize traditional public schools. Charter schools must reflect their communities, and thus must accept and retain proportionate numbers of students of color, students with disabilities and English Language Learners in relation to their neighborhood public schools. We support increased transparency and accountability for all charter schools. <h4>Source: <a href="https://www.businessinsider.com/inside-the-first-charter-school-in-america-city-academy-2015-6https://democrats.org/about/party-platform/#free-college">DNC Platform, 2016</a>.</h4> </blockquote>
 
 	<p> Since the appointment of Secretary of Education Betsy DeVos, vouchers as a form of school choice have taken on even greater salience. Questions of education will undoubtedly loom large in the 2020 presidential election.</p>
 
-	<p> A recent poll of opinion data reveals that across parties, charter schools enjoy more popularity as a form of school choice than do vouchers. This is particularly true in the Republican Party, although Republican support for vouchers appears to have stagnated at around 40% </p>
-
-	<p> Democrats exhibit a slightly different trend, with vouchers actually enjoying more popularity than charter schools. </p>
-
-	<p> Notably, teachers (shown in the graph below in black and grey lines) are generally less supportive of alternatives to traditional public schools.</p>
+	<p> A recent poll of opinion data reveals that Democrats have lukework support toward charrter schools and school vouchers. </p>
 
 
+<div>
 
-	<img src="Images/SchoolChoice.JPG" alt="School Choice Graphic" width="600">
+<!--Add the D3-->
+<!-- I'm going to try putting it inside div tags to change the object width -->
+<div style="width: 80%; height: 500px; overflow:hidden;">
+    <!-- Strangely enough, if you change the window size, the page needs to be refreshed to maintain the correct dimensions. Nevertheless, it seems to work! -->
 
-	<div>
-	<p> Source of Data: https://educationnext.org/files/ednext-poll-question-wording-over-time-through-2018.pdf </p>
+ <!-- Load in the scripts -->
+ <!-- Made the first script a  -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script> 
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="scripts/schoolchoiced3.js"></script>
+    <div id="chart" style="width: 800;height: 500px">
+    </div>
 
-	<div>
+
+    <!--Yes, there is script in my index. But when I pull it over to the JS, the whole thing breaks. My excuses!-->
+    
+    <script>
+
+// Manually entered the data on democratic support for charter schools and voucher schools
+    var groupChartData = [{ "Charter": 44, "Voucher": null, "Year": 2013 }, { "Charter": 47, "Voucher": null, "Year": 2014 }, { "Charter": 42, "Voucher": 47, "Year": 2015 }, { "Charter": 45, "Voucher": 42, "Year": 2016 }, { "Charter": 34, "Voucher": 44, "Year": 2017 }, { "Charter": 36, "Voucher": 47, "Year": 2018 }];
+
+// New labels into the legend
+    var columnsInfo = { "Charter": "Support for Charters", "Voucher": "Support for Vouchers" };
+
+    $("#chart").empty();
+    var muliSeriesChartConfig = {
+        mainDiv: "#chart",
+        colorRange: ["#2a98cd", "#00a300"],
+        data: groupChartData,
+        columnsInfo: columnsInfo,
+        xAxis: "Year",
+        yAxis: "Percent Supporting",
+        label: {
+            xAxis: "Year",
+            yAxis: "Percent Supporting"
+        },
+        requireCircle: false,
+        requireLegend: true
+    };
+    var muliSeriesChart = new multiSeriesLineChart(muliSeriesChartConfig);
+
+</script>
+</div>
+
+<h4> Source: <a href="https://educationnext.org/files/ednext-poll-question-wording-over-time-through-2018.pdf
+">Education Next, Program on Education Policy and Governance: Trends in the EdNext Survey: Question Wording and Data Over Time </a></h4>
+<h4> Graphic adapted fro: <a href="http://bl.ocks.org/ChandrakantThakkarDigiCorp/be18bb176b5050b55a32c05060bad11e">bl.ocks.org</a></h4>
+
+<p> School choice enjoys somewhat more popularity among the Republican party. Interestingly enough, teachers have been the least enthusiastic about charter and voucher programs. This suggests that opinions on educational reform do not always cleave neatly to party lines. </p>
+
+<p> A 2018 poll from Education Next used the following questions to gauge the latest trends in public opinion.</p>
+
+<ul>
+    <p> 1. As you may know, many states permit the formation of charter schools, which are publicly funded but are not managed by the local school board.  These schools are expected to meet promised objectives, but are exempt from many state regulations. Do you support or oppose the formation of charter schools? </p>
+    <p> 2. A proposal has been made that would give low-income families with children in public schools a voucher allowing them to enroll their children in attend[sic] private schools instead, with government helping to pay the tuition. Would you support or oppose the proposal? </p>
+</ul>
+
+<img src="Images/demographic_support_charter_voucher.png" alt="School Choice Graphic" width="600">
+
+<h4> Source: <a href="https://www.educationnext.org/files/2018ednextpoll.pdf"
+">Education Next, Program   on Education Policy and Governance -- Survey 2018 </a></h4>
+<h4> Graphic adapted from: <a href="http://bl.ocks.org/ChandrakantThakkarDigiCorp/be18bb176b5050b55a32c05060bad11e">bl.ocks.org</a></h4>
 
 
 
 	<p> The data looks somewhat different when examined at a more granular level. Michigan provides one example: </p>
 	<div>
 	<img src="Images/MichiganCharters.JPG" alt="Thoughts on charter school expansion in michigan" width="400">
-	<div>
+	</div>
 		<p> In general, charter schools are less popular among voters who identify with the Democratic Party. Voters in the "Other" category (i.e. those who identify as independent, with a third party, who do not know, or who refused to provide their party affiliation), have a large amount of spread in their opinions. </p>
 	<div>
 
 	<a href="index.html">Return to the About Page</a> 
-	<div>
+	</div>
 
 		<script src="scripts/schoolchoice.js"></script>
-
 </body>
 </html>

@@ -1,8 +1,4 @@
-// Because I'm running two very similar scripts on this page, at Ori's suggestion I'm wrapping them both
-// in functions so that they don't mess with one another, then immediately calling those functions.
-
-(function() {
-  var margin = {top: 60, right: 20, bottom: 160, left: 70},
+var margin = {top: 60, right: 20, bottom: 160, left: 70},
     width = 700 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
@@ -27,10 +23,10 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
-    return "<strong>Exact Proportion:</strong> <span style='color:black'>" + d.ed_perc + "</span>";
+    return "<strong>Exact Proportion:</strong> <span style='color:black'>" + d.safety_perc + "</span>";
   })
 
-var svg = d3.select("div#chart_unsorted").append("svg")
+var svg = d3.select("div#cand_ss_pct_tweet").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .attr("class", "cand_2020")
@@ -39,9 +35,9 @@ var svg = d3.select("div#chart_unsorted").append("svg")
 
 svg.call(tip);
 
-d3.tsv("data/cand_2020.tsv", type, function(error, data) {
+d3.tsv("data/cand_safety_2020.tsv", type, function(error, data) {
   x.domain(data.map(function(d) { return d.candidate; }));
-  y.domain([0, d3.max(data, function(d) { return d.ed_perc; })]);
+  y.domain([0, d3.max(data, function(d) { return d.safety_perc; })]);
 
   svg.append("g")
       .attr("class", "x axis")
@@ -65,8 +61,15 @@ d3.tsv("data/cand_2020.tsv", type, function(error, data) {
     .attr("x",width/2)
     .attr("y",0-(margin.top/2))
     .attr("text-anchor", "middle")
-    .text("Percentage of Tweets Including Education-Related Terms by Candidate")
+    .text("Percentage of Education Tweets Discussing School")
 
+// Add more plot title
+svg.append("text")
+    .attr("class", "plot title")
+    .attr("x",width/2)
+    .attr("y",0-(margin.top/5))
+    .attr("text-anchor", "middle")
+    .text("Safety by Candidate")
 
   svg.append("g")
       .attr("class", "y axis")
@@ -84,8 +87,8 @@ d3.tsv("data/cand_2020.tsv", type, function(error, data) {
       .attr("class", "bar")
       .attr("x", function(d) { return x(d.candidate); })
       .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.ed_perc); })
-      .attr("height", function(d) { return height - y(d.ed_perc); })
+      .attr("y", function(d) { return y(d.safety_perc); })
+      .attr("height", function(d) { return height - y(d.safety_perc); })
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide)
 
@@ -95,4 +98,3 @@ function type(d) {
   d.frequency = +d.frequency;
   return d;
 }
-})();

@@ -1,7 +1,9 @@
+//Script for the visualization shown as "Vouchers Now Outstrip Charters in Popularity among Surveyed Democrats"
+//on the school choice page
 
 // Source of script: http://bl.ocks.org/ChandrakantThakkarDigiCorp/be18bb176b5050b55a32c05060bad11e
 //This was a surprisingly tricky script
-//Rather than making a "tab separate value" chart, I followed the convention of the D3// In other words, I entered the data through a series of directories in a list
+//Rather than making a "tab separated value" chart, I followed the convention of the D3// In other words, I entered the data through a series of directories in a list
 
 // The x-axis gave a lot of trouble during the process. You'll see that I retained
 // some annotations about the process

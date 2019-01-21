@@ -2,6 +2,7 @@
 #about school safety for each candidate
 #that I then plug into display_ss_tweets.js to show school
 #safety tweets on the school safety page
+#This was originally in the scraping folder--this is a copy
 
 import csv
 from operator import itemgetter

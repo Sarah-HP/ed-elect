@@ -3,7 +3,8 @@
 #tweets, and csvs of the percentage of tweets about those subjects
 #to feed into charts
 #I've set up the file names with ../data in the expectation the
-#program is run while in the scraping folder
+#program is run while in the scraping folder (this is a copy that I
+#put in the scripts folder)
 
 #import packages
 import csv

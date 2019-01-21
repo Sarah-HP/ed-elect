@@ -3,7 +3,7 @@ from operator import itemgetter
 
 #This is based on tweet_filter.py, but adapted to look for
 #tweets about school safety, not affordability
-
+#This was originally in the scraping folder--this is a copy
 ##up to line 33 this is the same as that file, so I won't add more
 #markup here
 #Read in all tweets

@@ -2,6 +2,7 @@
 #about college affordability for each candidate
 #that I then plug into display_aff_tweets.js to show 
 #affordability tweets on the affordability page
+#This was originally in the scraping folder--this is a copy
 
 import csv
 from operator import itemgetter

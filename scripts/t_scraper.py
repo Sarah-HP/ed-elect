@@ -2,6 +2,7 @@
 
 #This script gets tweets for a user off the twitter api and writes csvs
 #I thought I was cool and called it a scraper
+#It was originally in the scraping folder--this is a copy
 #I have since learned better
 #it runs from the command line with argument "candidate name" 
 # "account_name" "twitter user id"

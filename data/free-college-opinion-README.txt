@@ -1,6 +1,6 @@
 This plot breaks down opinions about free college between men and women and between age groups. It's really two d3s; they're scripts/loan_poll_1 and scripts/loan_poll_2. The data for these d3s is, as in the block from which they're modified (http://bl.ocks.org/mstanaland/6100713) directly in the .js files.
 
-The data come from the question about free college in this gallup poll https://news.gallup.com/poll/191255/americans-buy-free-pre-split-tuition-free-college.aspx. Putting them in their current forms in the .js files consisted just of manually typing them in.
+The data come from the question about free college in this gallup poll https://news.gallup.com/poll/191255/americans-buy-free-pre-split-tuition-free-college.aspx. Putting them in their current forms in the .js files consisted just of manually typing them into the script.
 
 There is no corresponding css. I cut that out and discovered I liked how it looked when the existing css's were applied (enough to not deal with style conflicts, anyway).
 

@@ -3,6 +3,8 @@
 
 // set the dimensions and margins of the graph
 // I changed width to be a bit narrower
+// I wrapped the whole thing in a function to avoid conflicts
+
 (function() {
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 700 - margin.left - margin.right,
@@ -16,6 +18,8 @@ var x = d3.scaleTime().range([0, width]);
 var y = d3.scaleLinear().range([height, 0]);
 
 // define the line
+// I changed the name of the y variable to match
+// the data
 var valueline = d3.line()
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.fear); });
@@ -46,6 +50,7 @@ d3.csv("data/gun_feel_unsafe.csv", function(error, data) {
   y.domain([0, d3.max(data, function(d) { return d.fear; })]);
 
   // Add the valueline path.
+  // I added a class attribute here
   svg.append("path")
       .data([data])
       .attr("class", "gunline1")
@@ -79,8 +84,11 @@ d3.csv("data/gun_feel_unsafe.csv", function(error, data) {
 
 
 // define the line
-// I switched this to valueline2 so it would have a different variable name
+// I switched this to valueline2 so it would have 
+// a different variable name
 // from the first line
+// this code is just copied and slightly modified 
+// repeats of the above
 var valueline2 = d3.line()
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.no_safe); });

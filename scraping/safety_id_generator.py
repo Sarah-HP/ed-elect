@@ -1,3 +1,8 @@
+#this script outputs the tweet IDs of up to five recent tweets 
+#about school safety for each candidate
+#that I then plug into display_ss_tweets.js to show school
+#safety tweets on the school safety page
+
 import csv
 from operator import itemgetter
 
@@ -29,6 +34,7 @@ cand_count = {}
 for i in cand:
 	cand_count[i]=[]
 
+#go through tweets, add to list if list isn't up to five yet
 for tweet in tweets_sorted:
 	if len(cand_count[tweet['Candidate']]) <5:
 		cand_count[tweet['Candidate']].append(tweet[' Tweet ID'])
@@ -36,6 +42,9 @@ for tweet in tweets_sorted:
 #Sort list of candidates to set up for convenient Tweet order:
 sorted_cand=sorted(cand)
 
+#Print in format that can be plugged straight into js
+#loop over list index so that I can print from multiple lists
+#go from 1 to 25 so variable names will be right
 for i in range(1,len(sorted_cand)+1):
 	print('var ID'+ str(i) + ' = ' +  str(cand_count[sorted_cand[i-1]])+ ''' //''' +str(sorted_cand[i-1]))
 

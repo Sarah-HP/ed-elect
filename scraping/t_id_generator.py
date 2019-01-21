@@ -1,3 +1,8 @@
+#this script outputs the tweet IDs of up to five recent tweets 
+#about college affordability for each candidate
+#that I then plug into display_aff_tweets.js to show 
+#affordability tweets on the affordability page
+
 import csv
 from operator import itemgetter
 
@@ -19,6 +24,9 @@ for tweet in tweets:
 		cand.append(tweet['Candidate'])
 
 #manually add Ojeda because he has no tweets about affordability
+#at least not in the data set
+#he has one older one I found by accident that I will load into the
+#display manually
 cand.append('Ojeda')
 
 #sort tweets by date
@@ -32,7 +40,8 @@ cand_count = {}
 for i in cand:
 	cand_count[i]=[]
 
-#loop through and add recent Tweets until there are 5 (or we're out of tweets)
+#loop through and add recent Tweets until there are 5 
+#(or we're out of tweets)
 for tweet in tweets_sorted:
 	if len(cand_count[tweet['Candidate']]) <5:
 		cand_count[tweet['Candidate']].append(tweet[' Tweet ID'])

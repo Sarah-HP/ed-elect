@@ -5,6 +5,7 @@
     <link href="styles/a3style.css" rel="stylesheet" type="text/css">
     <link href="styles/cand_chart.css" rel="stylesheet" type="text/css">
     <link href="styles/tweet_embed_style.css" rel="stylesheet" type="text/css">
+    <link href="styles/sarahsplot.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="headsection">
@@ -98,46 +99,16 @@
 <!-- I'm going to try putting it inside div tags to change the object width -->
 
 <h3 class="centerme textofchart"> Vouchers Now Outstrip Charters in Popularity among Surveyed Democrats</h3.centerme>
-<div style="width: 80%; height: 500px; overflow:hidden;">
+<div class="sarahsplot">
     <!-- Strangely enough, if you change the window size, the page needs to be refreshed to maintain the correct dimensions. Nevertheless, it seems to work! -->
 
- <!-- Load in the scripts -->
- <!-- Made the first script a  -->
+ <!-- Load in the scripts-code only runs if they're up here-->
     <script src="https://code.jquery.com/jquery-latest.min.js"></script> 
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="scripts/schoolchoiced3.js"></script>
     <div id="chart" style="width: 800;height: 500px">
-    </div>
-
-
-    <!--Yes, there is script in my index. But when I pull it over to the JS, the whole thing breaks. My excuses!-->
-    
-    <script>
-
-// Manually entered the data on democratic support for charter schools and voucher schools
-    var groupChartData = [{ "Charter": 44, "Voucher": null, "Year": 2013 }, { "Charter": 47, "Voucher": null, "Year": 2014 }, { "Charter": 42, "Voucher": 47, "Year": 2015 }, { "Charter": 45, "Voucher": 42, "Year": 2016 }, { "Charter": 34, "Voucher": 44, "Year": 2017 }, { "Charter": 36, "Voucher": 47, "Year": 2018 }];
-
-// New labels into the legend
-    var columnsInfo = { "Charter": "Support for Charters", "Voucher": "Support for Vouchers" };
-
-    $("#chart").empty();
-    var muliSeriesChartConfig = {
-        mainDiv: "#chart",
-        colorRange: ["#2a98cd", "#00a300"],
-        data: groupChartData,
-        columnsInfo: columnsInfo,
-        xAxis: "Year",
-        yAxis: "Percent Supporting",
-        label: {
-            xAxis: "Year",
-            yAxis: "Percent Supporting"
-        },
-        requireCircle: false,
-        requireLegend: true
-    };
-    var muliSeriesChart = new multiSeriesLineChart(muliSeriesChartConfig);
-
-</script>
+    </div>    
+    <script src="scripts/vouchers_charters.js"></script>
 </div>
 <h4> Source: <a href="https://educationnext.org/files/ednext-poll-question-wording-over-time-through-2018.pdf
 ">Education Next, Program on Education Policy and Governance: Trends in the Education Next Survey: Question Wording and Data over Time </a> Graphic adapted from: <a href="http://bl.ocks.org/ChandrakantThakkarDigiCorp/be18bb176b5050b55a32c05060bad11e">bl.ocks.org</a></h4>

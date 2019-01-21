@@ -1,6 +1,10 @@
 //each of these variables --b for button --
-//corresponds to the candidate's name displayed on the html page
-
+//corresponds to the candidate's name
+// displayed on the html page
+// This script requires that twitter_embed_basic_code.js
+// also be running on the page
+// That file is straight from Twitter's developer site--see it 
+// for the source link
 
 
 var b1 = document.getElementById("b1");
@@ -29,7 +33,8 @@ var b23 = document.getElementById("b23");
 var b24 = document.getElementById("b24");
 var b25 = document.getElementById("b25");
 
-//create a variable for each div; we'll then toggle
+//create a variable for each div; we'll then
+// toggle
 //each div's visibility
 var div1 = document.getElementById("cand1");
 var div2 = document.getElementById("cand2");
@@ -796,7 +801,7 @@ b23.onclick = show_div23;
 b24.onclick = show_div24;
 b25.onclick = show_div25;
 
-//Define Tweet ID lists for 5 most recent tweets re: affordability
+//Define Tweet ID lists for 5 most recent tweets re: affordability. See readme for how we generated these
 //Will use below.
 
 

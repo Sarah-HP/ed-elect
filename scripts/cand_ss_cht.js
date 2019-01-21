@@ -1,3 +1,5 @@
+// Comments describe differences from 2020 candidates bar chart
+
 (function() {
   var margin = {top: 60, right: 20, bottom: 160, left: 70},
       width = 700 - margin.left - margin.right,
@@ -35,7 +37,7 @@
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   svg.call(tip);
-
+// Change data
   d3.tsv("data/cand_safety_2020.tsv", type, function(error, data) {
     x.domain(data.map(function(d) { return d.candidate; }));
     y.domain([0, d3.max(data, function(d) { return d.safety_perc; })]);
@@ -56,14 +58,14 @@
       .attr("x", width/2)
       .attr("y", height+150)
       .text("Candidate name");
-
+// Change title
     svg.append("text")
       .attr("class", "plot title")
       .attr("x",width/2)
       .attr("y",0-(margin.top/2))
       .attr("text-anchor", "middle")
       .text("Percentage of education tweets discussing school")
-
+// add second piece of title
   // Add more plot title
   svg.append("text")
       .attr("class", "plot title")

@@ -1,8 +1,11 @@
 import csv
 from operator import itemgetter
 
-#This is based on tweet_filter.py, but adapted to look for tweets about school safety, not affordability
+#This is based on tweet_filter.py, but adapted to look for
+#tweets about school safety, not affordability
 
+##up to line 33 this is the same as that file, so I won't add more
+#markup here
 #Read in all tweets
 with open('aggregated.csv','r') as f:
 	reader = csv.DictReader(f)
@@ -29,7 +32,9 @@ for tweet in tweets:
 			edu_tweets.append(tweet)
 			break
 
-#filter the educational tweets to ones dealing with safety--sorry for the mess of terms
+#filter the educational tweets to ones dealing with safety--
+#sorry for the mess of terms
+#same idea as tweet_filter.py
 safety_tweets = []
 
 for tweet in edu_tweets:
@@ -47,6 +52,9 @@ for tweet in edu_tweets:
 
 
 #Write safety tweets to CSV
+#used this when writing summaries of candidate positions
+#attrib is just the list of keys--the list of attributes we're
+#interested in writing to a CSV--text, date, name, etc.
 attrib = edu_tweets[0].keys()
 with open('safety_tweets.csv','w') as f:
 	d_wr = csv.DictWriter(f, attrib)
@@ -54,7 +62,13 @@ with open('safety_tweets.csv','w') as f:
 	d_wr.writerows(safety_tweets)
 
 #Count tweets about safety by candidate
+#make empty dictionary
 cand_safety_count = {}
+#standard counting method like we did in class
+#but if it helps me get points I will shamelessly brag
+#and say I wrote this first
+#ask Github
+#it's got the receipts
 for tweet in safety_tweets:
 	cand = tweet['Candidate']
 	if cand in cand_safety_count:
@@ -72,6 +86,8 @@ for tweet in edu_tweets:
 		cand_edu_tweet_count[cand] = 1
 
 #Count total number of tweets by candidate
+#I did this so I could check it against the list I already had
+#to verify this worked right, and it did
 cand_tweet_count = {}
 for tweet in tweets:
 	cand = tweet['Candidate']
@@ -80,8 +96,12 @@ for tweet in tweets:
 	else:
 		cand_tweet_count[cand] = 1
 
-#Create list of lists with list for each candidate with # of safety tweets, # of edu tweets, and # of total tweets
-#First make list of candidates - there are more efficient ways of doing this, but just in case there's one with no tweets about edu or something I'll use the complete list of aggregated tweets:
+#Create list of lists with list for each candidate with # of 
+#safety tweets, # of edu tweets, and # of total tweets
+#First make list of candidates - there are more efficient
+#ways of doing this, but just in case there's one with
+#no tweets about edu or something I'll use the complete
+#list of aggregated tweets:
 cand_list=[]
 for tweet in tweets:
 	cand = tweet['Candidate']
@@ -103,13 +123,15 @@ for i in cand_list:
 	cand_summary.append([i, cand_tweet_count[i], cand_edu_tweet_count[i], cand_safety_count[i]])
 
 #Write candidate summary to a CSV
+# basically just out of curiosity
 with open('safety_tweet_counts_by_cand.csv','w') as f:
     writer = csv.writer(f)
     writer.writerow(['candidate','tweets','education_tweets','safety_tweets'])
     for j in cand_summary:
         writer.writerow(j)
 
-#Create list with % of educ tweets addressing safety for each candidate:
+#Create list with % of educ tweets addressing safety for each
+#candidate:
 safety_over_educ_tweet_perc = []
 for i in cand_summary:
 	safety_over_educ_tweet_perc.append([i[0],i[3]/i[2]])
@@ -117,7 +139,8 @@ for i in cand_summary:
 #sort data by safety tweet percentage
 safety_over_educ_tweet_perc_sorted = sorted(safety_over_educ_tweet_perc, key = itemgetter(1))
 
-#Write percentage of educational tweets to tsv as data for plot of candidate tweet %
+#Write percentage of educational tweets to tsv as data
+#for plot of candidate tweet %
 with open ('../data/cand_safety_2020.tsv','w') as f:
 	tsv_writer = csv.writer(f, delimiter = '\t')
 	tsv_writer.writerow(['candidate', 'safety_perc'])

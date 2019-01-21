@@ -1,14 +1,17 @@
 // Nurlan adapted this d3 (his computer was having difficulty so we used mine)
 
+// Change from original: wrap
+ // in function to not conflict with other scripts
+
 (function(){
 // full disclsoure I didn't want a CSS conflict so I just got rid of the styles and it looks OK.
 
 
 // Setup svg using Bostock's margin convention
 
-// Expand margin so number fits
+// Change: expand margin so number fits
 var margin = {top: 20, right: 160, bottom: 35, left: 50};
-
+//Change width
 var width = 400 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
@@ -27,7 +30,7 @@ var data = [
   { gender: "35-54 ", support: "48", oppose: "43", no_opinion: "9" },
   { gender: "55+", support: "37", oppose: "55", no_opinion: "8" },
 ];
-
+//remove time stuff to take this data set
 // var parse = d3.time.format("%Y").parse;
 
 //Change reference to time
@@ -112,7 +115,7 @@ legend.append("rect")
   .attr("width", 18)
   .attr("height", 18)
   .style("fill", function(d, i) {return colors.slice().reverse()[i];});
- 
+ //change labels
 legend.append("text")
   .attr("x", width + 5)
   .attr("y", 9)

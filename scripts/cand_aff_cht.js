@@ -1,3 +1,5 @@
+// This was made by modifying cand_chart_scr_sorted.js. To avoid redundancy
+// I'll just annotate the changes from there to here
 (function() {
 var margin = {top: 60, right: 20, bottom: 160, left: 70},
     width = 700 - margin.left - margin.right,
@@ -27,6 +29,7 @@ var tip = d3.tip()
     return "<strong>Exact Proportion:</strong> <span style='color:black'>" + d.aff_perc + "</span>";
   })
 
+// changed the selector
 var svg = d3.select("div#cand_aff_pct_tweet").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -35,7 +38,7 @@ var svg = d3.select("div#cand_aff_pct_tweet").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 svg.call(tip);
-
+// changed the data
 d3.tsv("data/cand_aff_2020.tsv", type, function(error, data) {
   x.domain(data.map(function(d) { return d.candidate; }));
   y.domain([0, d3.max(data, function(d) { return d.aff_perc; })]);
@@ -56,7 +59,7 @@ d3.tsv("data/cand_aff_2020.tsv", type, function(error, data) {
     .attr("x", width/2)
     .attr("y", height+150)
     .text("Candidate name");
-
+// changed the title
   svg.append("text")
     .attr("class", "plot title")
     .attr("x",width/2)
@@ -64,7 +67,7 @@ d3.tsv("data/cand_aff_2020.tsv", type, function(error, data) {
     .attr("text-anchor", "middle")
     .text("Percentage of education tweets discussing college")
 
-// Add more plot title
+// Add more plot title b/c this one didn't fit on one line
 svg.append("text")
     .attr("class", "plot title")
     .attr("x",width/2)

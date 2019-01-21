@@ -1,5 +1,8 @@
+// Wrap whole thing in function to avoid conflicts
+// All comments here are mine, which is convenient
 (function() {
-
+// change width--make narrower
+// Increase bottom margin so label has room to show
   var margin = {top: 60, right: 20, bottom: 160, left: 70},
       width = 700 - margin.left - margin.right,
       height = 600 - margin.top - margin.bottom;
@@ -25,18 +28,22 @@
     .attr('class', 'd3-tip')
     .offset([-10, 0])
     .html(function(d) {
+// Change label
       return "<strong>Exact Proportion:</strong> <span style='color:black'>" + d.ed_perc + "</span>";
     })
 
+
+// Change selector
   var svg2 = d3.select("div#chart_sorted").append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
+      // add class
       .attr("class", "cand_2020")
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
+// changed variable name to svg2 to avoid conflict with other chart; wrapping this in a function has since made that unnecessary (plus we cut the other chart)
   svg2.call(tip);
-
+// Change data
   d3.tsv("data/cand_2020_sorted.tsv", type, function(error, data) {
     x.domain(data.map(function(d) { return d.candidate; }));
     y.domain([0, d3.max(data, function(d) { return d.ed_perc; })]);
@@ -49,15 +56,17 @@
           .style("text-anchor", "end")
           .attr("dx", "-.8em")
           .attr("dy", ".15em")
+          // Added rotation
           .attr("transform", "rotate(-65)" );
-
+// Added this--borrowed from chunk above, plus looking at other d3s as
+// I worked on this project
     svg2.append("text")
       .attr("class", "x label")
       .attr("text-anchor", "end")
       .attr("x", width/2)
       .attr("y", height+150)
       .text("Candidate name");
-
+// Added this
     svg2.append("text")
       .attr("class", "plot title")
       .attr("x",width/2)

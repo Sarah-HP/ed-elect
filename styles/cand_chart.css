@@ -1,11 +1,14 @@
+/*All comments here are mine*/
+
+/*Added cand_2020 class basically throughout to avoid conflicts*/
 .cand_2020 body {
   font: 10px sans-serif;
 }
-
+/*Added to try to center display*/
 .cand-chart {
   text-align: center;
 }
-
+ 
 .cand_2020 .axis path,
 .axis line {
   fill: none;
@@ -21,11 +24,11 @@
 .cand_2020 svg2 {
   padding: 100px;
 }
-
+/*changed color--was hideous before*/
 .cand_2020 .bar {
   fill: #6677FF;
 }
-
+/*changed color--was hideous before*/
 .cand_2020 .bar:hover {
   fill: blue ;
 }
@@ -62,7 +65,8 @@
   top: 100%;
   left: 0;
 }
-
+/*Added to make considetent with other charts and distinct from text*/
+/*chart-related materials are serif'd*/
 .cand_2020{
   font-family: Georgia, serif 
 }

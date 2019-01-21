@@ -1,4 +1,4 @@
-To create the graphic:
+To create the map on the school choice page:
 
 1) Took the data saved as "tabn216.90xls"
 

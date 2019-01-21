@@ -1,4 +1,6 @@
 // This is the .js for the graph of concerns about guns by region.
+//It is a static graph, so it was pretty easy to pull together
+
 
 //Manually input the data
 (function(){
@@ -52,6 +54,8 @@
             .domain(data.map(function (d) {
                 return d.name;
             }));
+
+//The indented annotations below are actually from the designers of this particular d3 graphipc.
 
         //make y axis to show bar names
         var yAxis = d3.svg.axis()

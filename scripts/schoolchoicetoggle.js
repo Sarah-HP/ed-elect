@@ -3,7 +3,9 @@
 //each of these variables --b for button --
 //corresponds to the candidate's name displayed on the html page
 
-
+//These items appear on the very bottom of the school choice page
+//My only modification was deleting everything after line 800 of 
+// Sam's initial script (the other lines in his script related to tweet embedding)
 
 var b1 = document.getElementById("b1");
 var b2 = document.getElementById("b2");

@@ -1,3 +1,8 @@
+//I (Sarah) had been having some difficulty separating this part of the 
+// javascript script from my .html
+//(every time I moved it, the graphic broke)
+//Sam gave me a hand here by pulling out this script
+
 // Manually entered the data on democratic support for charter schools and voucher schools
     var groupChartData = [{ "Charter": 44, "Voucher": null, "Year": 2013 }, { "Charter": 47, "Voucher": null, "Year": 2014 }, { "Charter": 42, "Voucher": 47, "Year": 2015 }, { "Charter": 45, "Voucher": 42, "Year": 2016 }, { "Charter": 34, "Voucher": 44, "Year": 2017 }, { "Charter": 36, "Voucher": 47, "Year": 2018 }];
 

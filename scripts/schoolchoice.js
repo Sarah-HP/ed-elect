@@ -1,3 +1,6 @@
+//The school choice page has one element from DataWrapper
+//This is a really user-friendly interface, so pretty much all we did here
+//was to separate the .js script from the other components of the chart.
 
 //Embed the script for the interactive map of the U.S.
 if("undefined"==typeof window.datawrapper)

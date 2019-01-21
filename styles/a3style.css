@@ -1,3 +1,7 @@
+/*This page shows the styles for the A3 team*/
+/*We began with a template from Code4Policy class practice, and then we elaborated*/
+/*Please refer to the comments to see sources where we gathered formatting*/
+
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
@@ -32,16 +36,13 @@ p {
     color: black;
 }
 
-/*Going to specify the padding for h3, which is currently way too big*/
-/*Actually, this doesn't seem to accomplish much. Back into the comments*/
-/*h3 {
-  padding: 0px 0px 0px 0px;
-}
-*/
 /* This next style is for really small & inconsequential captions */
+/*We added 60px padding and serif font so that the captions would have a different style
+Ideally, this will help site visitors immediately realize that we are dealing with graphs (as opposed to the narrative)
+*/
 h4 {
 	font-size: 8pt;
-  padding: 0px 0px 10px 60px;
+  padding: 0px 0px 10px 60px; 
   font-family: Georgia, serif;
 }
 
@@ -90,13 +91,7 @@ nav ul li, footer ul li {
     margin-right: 20px;
 }
 
-/*I think this h1 is redundant. Delete?*/
-/*h1 {
-	font-size: 50px;
-	color: black;
-	border: 3px black;
-}
-*/
+
 html {
 	background-color: #B7C3D0
 }
@@ -105,7 +100,6 @@ html {
   color: white;
 }
 
-/*Using one of w3schools.com's suggested color palettes*/
 /*Setting this so that if screen's super wide things don't get stretched too much*/
 .mainbody {
   width: 900px;
@@ -147,7 +141,7 @@ html {
   }
 }
 
-
+/*This gives block quotes a nice, distinguished look*/
 .quote {
 	    border: 1px solid black;
 }

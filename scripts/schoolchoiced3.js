@@ -1,5 +1,10 @@
 
 // Source of script: http://bl.ocks.org/ChandrakantThakkarDigiCorp/be18bb176b5050b55a32c05060bad11e
+//This was a surprisingly tricky script
+//Rather than making a "tab separate value" chart, I followed the convention of the D3// In other words, I entered the data through a series of directories in a list
+
+// The x-axis gave a lot of trouble during the process. You'll see that I retained
+// some annotations about the process
 
     window.addEventListener('resize', function (event) {
         $("#chart").width(window.innerWidth * 0.9);
@@ -117,7 +122,9 @@ var xAxis = config.xAxis;
       id: id,
       values: data.filter(function (d, i) {
         //CBT:remove last blank or value is 0 data to show only that much of line
-        ///Sarah: replaced i==0 with "null"
+///Sarah: Dhrumil and I replaced i==0 with "null"
+///That had the desired effect of making the line for vouchers short
+///(there was no voucher data for 2013 and 2014)
         if ((d[id] != 0 && d[id] != null && d[id] != undefined) || i == null) return d;
       }).map(function (d, i) {
         var tempObj = {};
@@ -128,26 +135,27 @@ var xAxis = config.xAxis;
     };
   });
 
+//This next bit is me trying to figure out the x axes
+  // Using this website: https://stackoverflow.com/questions/16919280/how-to-update-axis-using-d3-js
+  // I will define a variable called "x" that holds the axis range I want for the x-axis
+  /// putting this in comments because it did not work
+  /////x = d3.scale.linear().domain([2013,2018]).range([margin,width-margin]),
+  /////x.domain(d3.extent(x, function (d) {
+  /////return d[xAxis];
 
-// Using this website: https://stackoverflow.com/questions/16919280/how-to-update-axis-using-d3-js
-// I will define a variable called "x" that holds the axis range I want for the x-axis
-/// putting this in comments because it did not work
-/////x = d3.scale.linear().domain([2013,2018]).range([margin,width-margin]),
-/////x.domain(d3.extent(x, function (d) {
-/////return d[xAxis];
+  //This also does not work:   x.domain(d3.extent([2013,2018], function (d) {
+  //This also doesn't work:   x.domain(d3.extent(['Year'], function (d) {
 
-//This also does not work:   x.domain(d3.extent([2013,2018], function (d) {
-//This also doesn't work:   x.domain(d3.extent(['Year'], function (d) {
+  // What if I just set the whole domain manually?
+  ////Nope: 
+  //  x.domain([2013,2018])
+  //    return d[xAxis]
 
-// What if I just set the whole domain manually?
-////Nope: 
-//  x.domain([2013,2018])
-//    return d[xAxis]
+  //What if I do this?
+  ///Nope.
+  //  x.domain(d3.scaleLinear().domain([2013, 2018]).range([0, 960]))
 
-//What if I do this?
-///Nope.
-//  x.domain(d3.scaleLinear().domain([2013, 2018]).range([0, 960]))
-
+//I got a bit stuck and asked Ori and Dhrumil for help
   x.domain(d3.extent(data, function (d) {
   return d[xAxis];
   }));
@@ -159,6 +167,10 @@ var xAxis = config.xAxis;
     return c.id;
   }));
 
+// One problem was that I used the date as a continuous variable
+// (rather than a year)
+// The downside is that the year was appearing as "2013.5, 2014.0", etc.
+// The fix can be seen in line 178--credit to Dhrumil
   g.append("g")
     .attr("class", "axis axis--x")
     .attr("class", "title")
@@ -348,6 +360,10 @@ var xAxis = config.xAxis;
     .attr("id", "circletooltipRect_" + mainDivName)
     .attr("x", 0)
     .attr("width", 0) // Change the opaque box to be 0 in width
+//I Changed the box to opaque because I accidentally deleted the tool tip
+// labels at one point, and so I had a black box and off to the left
+//was some white text on a white background (it should have been superimposed on the black background)
+//My solution was to make the box clear and the text black (see line 376)
     .attr("height", 80)
     .attr("opacity", 0.71)
     .style("fill", "#000000");

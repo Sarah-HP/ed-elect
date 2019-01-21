@@ -15,4 +15,8 @@ Data transformation steps for the "Education Next" data displayed under the titl
 
 // FOR THE D3
 
-I manually entered charter school popularity by year into a list of dictionaries. Further details on the data transformations are available in the d3 code annotations (also on the school choice page)
+1. I manually entered charter school popularity by year into a list of dictionaries. 
+
+2. The data came Education Next, "Program on Education Policy and Governance: Trends in the Education Next Survey: Question Wording and Data over Time", Page 9 (row 7), and Page 11 (row 7). Graphic adapted from: bl.ocks.org
+
+3. Further details on the data transformations are available in the d3 code annotations (also on the school choice page). This file is available under scripts/
